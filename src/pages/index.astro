@@ -4,35 +4,48 @@ import { amazonUrl, images } from '../utils/site';
 ---
 
 <Layout>
-  <!-- Hero / Announcement -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-inner">
-      <h1>NOW AVAILABLE!</h1>
+  <!-- Hero -->
+  <section
+    class="relative bg-cover bg-center text-center py-[50px]"
+    style={`background-image: url('${images.heroBackground}')`}
+  >
+    <div class="absolute inset-0 bg-white/50 pointer-events-none"></div>
+    <div class="relative z-10 mx-auto max-w-[1140px] px-6">
+      <h1 class="mb-4 font-bebas text-[60px] font-semibold leading-none tracking-[1.4px] text-primary md:text-[126px] lg:text-[163px]">
+        NOW AVAILABLE!
+      </h1>
       <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
-        <img src={images.amazonButton} alt="Order now at Amazon" class="amazon-btn" />
+        <img
+          src={images.amazonButton}
+          alt="Order now at Amazon"
+          class="mx-auto inline-block max-w-[62%] transition-transform hover:scale-105 md:max-w-[300px]"
+        />
       </a>
-      <div class="hero-grid">
-        <h2 class="subtitle">Hey everyone, my new book is published!</h2>
-        <div class="hero-book">
-          <img src={images.bookMockup} alt="Clowning from the Heart book cover" />
+      <div class="mt-8 grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+        <h2 class="self-center text-center font-abril text-[30px] font-black leading-[1.4] text-primary md:text-[clamp(30px,4vw,50px)] md:leading-[1.2]">
+          Hey everyone, my new book is published!
+        </h2>
+        <div>
+          <img src={images.bookMockup} alt="Clowning from the Heart book cover" class="w-full rounded" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- Book Section -->
-  <section class="book-section">
-    <div class="container">
-      <h2>One smile at a time changed thousands of lives starting with one unexpected calling</h2>
-      <div class="book-text">
-        <p>
+  <section class="bg-white px-[25px] pt-[25px] pb-0 md:px-0 md:pt-[50px] md:pb-[25px]">
+    <div class="mx-auto max-w-[1140px] px-6">
+      <h2 class="mb-5 text-center font-bebas text-[35px] font-semibold uppercase leading-[1.2] tracking-[1.4px] text-primary md:text-[clamp(35px,4vw,50px)]">
+        One smile at a time changed thousands of lives starting with one unexpected calling
+      </h2>
+      <div class="mx-auto max-w-[800px]">
+        <p class="mb-5 leading-[1.7] text-body">
           <i><b>Clowning from the Heart</b></i> is the true story of Cindy Love's unexpected calling to become "Sparkle," a gospel clown who brought joy, hope, and God's love into hospitals, schools, parades, and places marked by pain.
         </p>
-        <p>
+        <p class="mb-5 leading-[1.7] text-body">
           Through tender encounters with wounded children, skeptics, and strangers carrying heavy burdens, Cindy discovered a simple truth: healing often begins with being seen, heard, and loved. What started as a step of obedience became a ministry rooted in compassion, faith, and the quiet power of presence.
         </p>
-        <p>
+        <p class="mb-5 leading-[1.7] text-body">
           This heartfelt memoir shares how God uses ordinary people and simple acts of kindness to reach broken hearts and spark something miraculous.
         </p>
       </div>
@@ -40,373 +53,88 @@ import { amazonUrl, images } from '../utils/site';
   </section>
 
   <!-- Author Section -->
-  <section class="author-section">
-    <div class="container author-grid">
-      <div class="author-image">
-        <img src={images.headshot} alt="Cindy Love-Sprengel" />
+  <section class="bg-white p-[25px] md:px-0 md:pt-[25px] md:pb-[50px]">
+    <div class="mx-auto grid max-w-[1140px] grid-cols-1 items-center gap-5 px-6 md:grid-cols-2">
+      <div>
+        <img src={images.headshot} alt="Cindy Love-Sprengel" class="block w-full" />
       </div>
-      <div class="author-content">
-        <p>
+      <div class="self-center">
+        <p class="mb-5 leading-[1.7] text-body">
           Cindy Love-Sprengel was born and raised in California City, a small town in the Mojave Desert. As an adult, she became a self-taught clown, discovering along the way that authenticity and joy are what truly bring a clown to life.
         </p>
-        <p>
+        <p class="mb-5 leading-[1.7] text-body">
           For 35 years, Cindy served as "Sparkle the Clown," using humor, compassion, and faith to bring comfort and connection to people of all ages. Through her work, she learned that joy can open doors where words cannot, and that even the smallest act of kindness can leave a lasting impact.
         </p>
-        <p>
+        <p class="mb-5 leading-[1.7] text-body">
           Cindy is a devoted mother of two and grandmother of four, whom she lovingly calls the light of her world. She now lives in Walla Walla, Washington with her husband, Lew. When she's not clowning, Cindy enjoys knitting, crocheting, and crafting. She also shares her home with three cats, two Shih Tzus, and one Yorkshire Terrier.
         </p>
-        <p>
+        <p class="mb-5 leading-[1.7] text-body">
           Through <i><b>Clowning from the Heart</b></i>, Cindy invites readers into her story of obedience, compassion, and the quiet power of bringing joy where it's needed most.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Review Request Section -->
-  <section class="review-section">
-    <div class="review-overlay"></div>
-    <div class="container review-inner">
-      <h2>NOW AVAILABLE!</h2>
+  <!-- Review Section -->
+  <section
+    class="relative bg-cover bg-center bg-no-repeat py-[50px] max-md:px-[25px]"
+    style={`background-image: url('${images.reviewBackground}')`}
+  >
+    <div class="absolute inset-0 bg-black/[.28] pointer-events-none"></div>
+    <div class="relative z-10 mx-auto max-w-[1140px] px-6 text-center">
+      <h2 class="mb-4 font-bebas text-[35px] font-semibold tracking-[1.4px] text-white md:text-[clamp(35px,4vw,50px)]">
+        NOW AVAILABLE!
+      </h2>
       <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
-        <img src={images.amazonButton} alt="Order now at Amazon" class="amazon-btn" />
+        <img
+          src={images.amazonButton}
+          alt="Order now at Amazon"
+          class="mx-auto inline-block max-w-[300px] transition-transform hover:scale-105"
+        />
       </a>
-      <h3 class="review-heading">Help me share my book to the world</h3>
-      <div class="letter">
-        <p><i>Dear Friend,</i></p>
-        <p>
+      <h3 class="mt-8 mb-6 font-bebas text-[35px] font-semibold uppercase tracking-[1.4px] text-white md:text-[clamp(35px,4vw,50px)]">
+        Help me share my book to the world
+      </h3>
+      <div class="mx-auto max-w-[800px] text-left leading-[1.7] text-white">
+        <p class="mb-5"><i>Dear Friend,</i></p>
+        <p class="mb-5">
           <i>Thank you for reading Clowning from the Heart! My hope is that Sparkle's journey has encouraged you, made you smile, and inspired you to see the ways God can use even the smallest acts of love to make a difference.</i>
         </p>
-        <p>
+        <p class="mb-5">
           <i>One of the most powerful ways to help others discover this story is by leaving a review on Amazon (and Goodreads, etc.). Your honest words can show how laughter, compassion, and obedience can touch lives and inspire hearts.</i>
         </p>
 
-        <p><i><b>Why Reviews Matter</b></i></p>
-        <p>
+        <p class="mb-5"><i><b>Why Reviews Matter</b></i></p>
+        <p class="mb-5">
           <i>Your review helps readers see that ministry, faith, and hope can come in unexpected forms, one smile at a time. Even a few sentences can encourage someone to open this book and be transformed.</i>
         </p>
 
-        <p><i><b>How to Leave a Review</b></i></p>
-        <ol>
-          <li><i>Go to the <a href={amazonUrl} target="_blank" rel="noopener noreferrer"><b>Clowning from the Heart</b></a> Amazon page</i></li>
-          <li><i>Scroll to <b>Customer Reviews</b></i></li>
-          <li><i>Click <b>"Write a customer review"</b></i></li>
-          <li><i>Share your thoughts, what part of Sparkle's story touched you most?</i></li>
-          <li><i>Give a star rating and click <b>Submit</b></i></li>
+        <p class="mb-5"><i><b>How to Leave a Review</b></i></p>
+        <ol class="mb-5 list-decimal pl-6">
+          <li class="mb-2"><i>Go to the <a href={amazonUrl} target="_blank" rel="noopener noreferrer" class="text-green-link underline hover:text-green-link/80"><b>Clowning from the Heart</b></a> Amazon page</i></li>
+          <li class="mb-2"><i>Scroll to <b>Customer Reviews</b></i></li>
+          <li class="mb-2"><i>Click <b>"Write a customer review"</b></i></li>
+          <li class="mb-2"><i>Share your thoughts, what part of Sparkle's story touched you most?</i></li>
+          <li class="mb-2"><i>Give a star rating and click <b>Submit</b></i></li>
         </ol>
 
-        <p><i><b>Starter Ideas</b></i></p>
-        <p><i>"This book reminded me that God can use anyone, anywhere, to bring light and joy."</i></p>
-        <p><i>"Cindy Love's story of Sparkle inspired me to look for ways to serve with compassion and love."</i></p>
-        <p><i>"From laughter to heartfelt moments, every page shows the power of presence, kindness, and faith."</i></p>
+        <p class="mb-5"><i><b>Starter Ideas</b></i></p>
+        <p class="mb-5"><i>"This book reminded me that God can use anyone, anywhere, to bring light and joy."</i></p>
+        <p class="mb-5"><i>"Cindy Love's story of Sparkle inspired me to look for ways to serve with compassion and love."</i></p>
+        <p class="mb-5"><i>"From laughter to heartfelt moments, every page shows the power of presence, kindness, and faith."</i></p>
 
-        <p><i><b>Thank You!</b></i></p>
-        <p>
+        <p class="mb-5"><i><b>Thank You!</b></i></p>
+        <p class="mb-5">
           <i>Every review helps others discover the joy, hope, and love in this story. Your voice matters and can be part of spreading God's light — one smile at a time.</i>
         </p>
-        <p><i>With gratitude,</i></p>
-        <p><i><b>Cindy Love</b></i></p>
+        <p class="mb-5"><i>With gratitude,</i></p>
+        <p class="mb-5"><i><b>Cindy Love</b></i></p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; {new Date().getFullYear()} Spirit Media &bull; All Rights Reserved</p>
-    </div>
+  <footer class="bg-primary py-4 px-6 text-center text-sm text-white">
+    <p class="m-0">&copy; {new Date().getFullYear()} Spirit Media &bull; All Rights Reserved</p>
   </footer>
 </Layout>
-
-<style>
-  /* Hero */
-  .hero {
-    position: relative;
-    background-image: url('https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 50px 0;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: #ffffff;
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  .hero-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(60px, 10vw, 163px);
-    font-weight: 600;
-    letter-spacing: 1.4px;
-    color: #d91c57;
-    margin: 0 0 1rem;
-    line-height: 1;
-  }
-
-  .amazon-btn {
-    display: inline-block;
-    max-width: 300px;
-    transition: transform 0.2s ease;
-  }
-
-  .amazon-btn:hover {
-    transform: scale(1.05);
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 2rem;
-    max-width: 1140px;
-  }
-
-  .hero .subtitle {
-    font-family: 'Abril Fatface', serif;
-    font-size: clamp(30px, 4vw, 50px);
-    font-weight: 900;
-    line-height: 1.2;
-    color: #d91c57;
-    text-align: center;
-    align-self: center;
-  }
-
-  .hero-book img {
-    max-width: 100%;
-    border-radius: 4px;
-  }
-
-  /* Container */
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  /* Book Section */
-  .book-section {
-    background: #fff;
-    padding: 50px 0 25px;
-  }
-
-  .book-section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(35px, 4vw, 50px);
-    font-weight: 600;
-    letter-spacing: 1.4px;
-    color: #d91c57;
-    margin: 0 0 20px;
-    line-height: 1.2;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .book-text {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .book-text p {
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #5f5f5f;
-    margin: 0 0 20px;
-  }
-
-  /* Author Section */
-  .author-section {
-    background: #fff;
-    padding: 25px 0 50px;
-  }
-
-  .author-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    .author-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .author-image img {
-    width: 100%;
-    display: block;
-  }
-
-  .author-content {
-    align-self: center;
-  }
-
-  .author-content p {
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #5f5f5f;
-    margin: 0 0 20px;
-  }
-
-  /* Review Section */
-  .review-section {
-    position: relative;
-    background-image: url('https://cdn.sanity.io/images/zvhqn0sn/production/bb0672461fb970d6b3a5a93f6e5d67cb94aeb9f4-1920x1080.webp');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 50px 0;
-  }
-
-  .review-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: #000000;
-    opacity: 0.28;
-    pointer-events: none;
-  }
-
-  .review-inner {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-
-  .review-section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(35px, 4vw, 50px);
-    font-weight: 600;
-    letter-spacing: 1.4px;
-    color: #ffffff;
-    margin: 0 0 1rem;
-  }
-
-  .review-heading {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(35px, 4vw, 50px);
-    font-weight: 600;
-    letter-spacing: 1.4px;
-    color: #ffffff;
-    margin: 2rem 0 1.5rem;
-    text-transform: uppercase;
-  }
-
-  .letter {
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #ffffff;
-    text-align: left;
-  }
-
-  .letter p {
-    margin: 0 0 20px;
-  }
-
-  .letter ol {
-    margin: 0 0 20px;
-    padding-left: 1.5rem;
-  }
-
-  .letter li {
-    margin-bottom: 0.5rem;
-  }
-
-  .letter a {
-    color: #00ff23;
-    text-decoration: underline;
-  }
-
-  .letter a:hover {
-    color: #00cc1c;
-  }
-
-  /* Footer */
-  .site-footer {
-    background-color: #d91c57;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 1.5rem;
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.9rem;
-  }
-
-  .site-footer p {
-    margin: 0;
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .hero h1 {
-      font-size: 126px;
-    }
-
-    .book-section,
-    .author-section {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-
-    .review-section {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .hero h1 {
-      font-size: 60px;
-    }
-
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hero .subtitle {
-      font-size: 30px;
-      line-height: 1.4;
-    }
-
-    .amazon-btn {
-      max-width: 62%;
-    }
-
-    .author-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .book-section h2,
-    .review-section h2,
-    .review-heading {
-      font-size: 35px;
-    }
-
-    .book-section {
-      padding: 25px 25px 0;
-    }
-
-    .author-section {
-      padding: 25px;
-    }
-
-    .review-section {
-      padding: 50px 25px;
-    }
-  }
-</style>

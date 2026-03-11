@@ -6,17 +6,18 @@ export default defineConfig({
   site: process.env.PUBLIC_SITE_URL || 'https://yourdomain.com',
   output: 'static',
   integrations: [sitemap()],
+  server: { port: 4323, host: true },
   vite: {
     plugins: [tailwindcss()],
     server: {
       host: true,
       strictPort: false,
-      allowedHosts: 'all',
+      allowedHosts: true,
     },
     preview: {
       host: true,
       strictPort: false,
-      allowedHosts: 'all',
+      allowedHosts: true,
     },
   },
 });

@@ -10,18 +10,18 @@ import { amazonUrl, images } from '../utils/site';
     style={`background-image: url('${images.heroBackground}')`}
   >
     <div class="absolute inset-0 bg-white/50 pointer-events-none"></div>
-    <div class="relative z-10 mx-auto max-w-[1140px] px-6">
-      <h1 class="mb-12 font-bebas text-[60px] font-semibold leading-none tracking-[1.4px] text-primary md:text-[126px] lg:text-[163px]">
+    <div class="relative z-10 mx-auto max-w-[1140px] px-4">
+      <h1 class="mb-4 font-bebas text-[60px] font-semibold leading-none tracking-[1.4px] text-primary md:mb-12 md:text-[126px] lg:text-[163px]">
         NOW AVAILABLE!
       </h1>
-      <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
+      <a href={amazonUrl} target="_blank" rel="noopener noreferrer" class="my-4 inline-block md:my-6">
         <img
           src={images.amazonButton}
           alt="Order now at Amazon"
-          class="mx-auto inline-block max-w-[62%] transition-transform hover:scale-105 md:max-w-[300px]"
+          class="mx-auto inline-block max-w-[45%] transition-transform hover:scale-105 md:max-w-[300px]"
         />
       </a>
-      <div class="mt-8 grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+      <div class="mt-4 grid grid-cols-1 items-center gap-4 md:mt-8 md:gap-8 md:grid-cols-2">
         <h2 class="self-center text-center font-abril text-[30px] font-black leading-[1.4] text-primary md:-mt-24 md:text-[clamp(30px,4vw,50px)] md:leading-[1.2]">
           Hey everyone, my new book is published!
         </h2>
@@ -33,9 +33,9 @@ import { amazonUrl, images } from '../utils/site';
   </section>
 
   <!-- Book Section -->
-  <section class="bg-white pt-[25px] pb-0 md:pt-[50px] md:pb-[25px]">
+  <section class="bg-white p-[25px] md:px-0 md:pt-[50px] md:pb-[25px]">
     <div class="mx-auto max-w-[1140px]">
-      <h2 class="mb-5 text-center font-bebas text-[35px] font-semibold uppercase leading-[1.2] tracking-[1.4px] text-primary md:text-[clamp(35px,4vw,50px)]">
+      <h2 class="mb-5 text-center font-bebas text-[35px] font-semibold uppercase leading-none tracking-[1.4px] text-primary md:text-[clamp(35px,4vw,50px)]">
         One smile at a time changed thousands of lives starting with one unexpected calling
       </h2>
       <div>
@@ -53,22 +53,22 @@ import { amazonUrl, images } from '../utils/site';
   </section>
 
   <!-- Author Section -->
-  <section class="bg-white p-[25px] md:px-0 md:pt-[25px] md:pb-[50px]">
-    <div class="mx-auto grid max-w-[1140px] grid-cols-1 items-center gap-5 pr-6 md:grid-cols-2">
+  <section class="bg-white px-[25px] pt-0 pb-[25px] md:px-0 md:pt-[25px] md:pb-[50px]">
+    <div class="mx-auto grid max-w-[1140px] grid-cols-1 items-center gap-5 md:grid-cols-2">
       <div>
         <img src={images.headshot} alt="Cindy Love-Sprengel" class="block w-full" />
       </div>
       <div class="self-center">
-        <p class="mb-5 leading-tight text-body">
+        <p class="mb-5 leading-[1.7] text-body">
           Cindy Love-Sprengel was born and raised in California City, a small town in the Mojave Desert. As an adult, she became a self-taught clown, discovering along the way that authenticity and joy are what truly bring a clown to life.
         </p>
-        <p class="mb-5 leading-tight text-body">
+        <p class="mb-5 leading-[1.7] text-body">
           For 35 years, Cindy served as "Sparkle the Clown," using humor, compassion, and faith to bring comfort and connection to people of all ages. Through her work, she learned that joy can open doors where words cannot, and that even the smallest act of kindness can leave a lasting impact.
         </p>
-        <p class="mb-5 leading-tight text-body">
+        <p class="mb-5 leading-[1.7] text-body">
           Cindy is a devoted mother of two and grandmother of four, whom she lovingly calls the light of her world. She now lives in Walla Walla, Washington with her husband, Lew. When she's not clowning, Cindy enjoys knitting, crocheting, and crafting. She also shares her home with three cats, two Shih Tzus, and one Yorkshire Terrier.
         </p>
-        <p class="mb-5 leading-tight text-body">
+        <p class="mb-5 leading-[1.7] text-body">
           Through <i><b>Clowning from the Heart</b></i>, Cindy invites readers into her story of obedience, compassion, and the quiet power of bringing joy where it's needed most.
         </p>
       </div>
@@ -81,7 +81,7 @@ import { amazonUrl, images } from '../utils/site';
     style={`background-image: url('${images.reviewBackground}')`}
   >
     <div class="absolute inset-0 bg-black/[.28] pointer-events-none"></div>
-    <div class="relative z-10 mx-auto max-w-[1140px] text-center">
+    <div class="relative z-10 mx-auto max-w-[1140px] px-[25px] text-center md:px-0">
       <h2 class="mb-2 font-bebas text-[35px] font-semibold tracking-[1.4px] text-white md:text-[clamp(35px,4vw,50px)]">
         NOW AVAILABLE!
       </h2>
@@ -92,7 +92,7 @@ import { amazonUrl, images } from '../utils/site';
           class="mx-auto inline-block max-w-[300px] transition-transform hover:scale-105"
         />
       </a>
-      <h3 class="mt-1 mb-0 font-bebas text-[35px] font-semibold uppercase tracking-[1.4px] text-white md:text-[clamp(35px,4vw,50px)]">
+      <h3 class="mt-1 mb-0 font-bebas text-[35px] font-semibold uppercase leading-none tracking-[1.4px] text-white md:text-[clamp(35px,4vw,50px)]">
         Help me share my book to the world
       </h3>
       <div class="text-left text-white">

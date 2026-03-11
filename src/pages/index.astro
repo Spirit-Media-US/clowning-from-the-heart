@@ -1,261 +1,284 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import SectionHeading from '../components/SectionHeading.astro';
+import { amazonUrl, images } from '../utils/site';
 ---
 
-<Layout
-  title="Clowning from the Heart — Joy, Laughter & Wonder"
-  description="Bringing joy, laughter, and wonder to events, parties, and special occasions. Professional clown entertainment for all ages."
-  canonicalPath="/"
->
-
-  <!-- Hero -->
-  <Hero
-    title="Joy That Comes from the Heart"
-    intro="Professional clown entertainment that brings genuine laughter, warmth, and wonder to birthdays, events, hospitals, and more."
-    ctaPrimary={{ label: 'Book an Event', href: '/contact' }}
-    ctaSecondary={{ label: 'Learn More', href: '/about' }}
-  />
-
-  <!-- Intro / Overview -->
-  <section class="section">
+<Layout>
+  <!-- Hero / Announcement -->
+  <section class="hero">
     <div class="container">
-      <SectionHeading
-        eyebrow="Welcome"
-        heading="Entertainment That Connects People"
-        body="We believe laughter is a gift. Whether it's a child's birthday party, a community event, or a hospital visit, we bring the kind of joy that leaves a lasting impression."
-      />
-      <div class="intro-grid">
-        <div class="intro-card">
-          <div class="intro-icon" aria-hidden="true">🎈</div>
-          <h3>Genuine Connection</h3>
-          <p>Every performance is tailored to the audience, creating real moments of joy.</p>
-        </div>
-        <div class="intro-card">
-          <div class="intro-icon" aria-hidden="true">🌟</div>
-          <h3>All Ages Welcome</h3>
-          <p>From toddlers to grandparents, our entertainment resonates with everyone.</p>
-        </div>
-        <div class="intro-card">
-          <div class="intro-icon" aria-hidden="true">❤️</div>
-          <h3>Heartfelt Performance</h3>
-          <p>We don't just put on a show — we bring a piece of our heart to every event.</p>
-        </div>
+      <h1>NOW AVAILABLE!</h1>
+      <h2 class="subtitle">Hey everyone, my new book is published!</h2>
+      <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
+        <img src={images.amazonButton} alt="Buy on Amazon" class="amazon-btn" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Book Section -->
+  <section class="book-section section">
+    <div class="container book-grid">
+      <div class="book-image">
+        <img src={images.bookMockup} alt="Clowning from the Heart book cover" />
+      </div>
+      <div class="book-content">
+        <h2>One smile at a time changed thousands of lives starting with one unexpected calling</h2>
+        <p>
+          <strong><em>Clowning from the Heart</em></strong> is the true story of Cindy Love's unexpected calling to become "Sparkle," a gospel clown who brought joy, hope, and God's love into hospitals, schools, parades, and places marked by pain.
+        </p>
+        <p>
+          Through tender encounters with wounded children, skeptics, and strangers carrying heavy burdens, Cindy discovered a simple truth: healing often begins with being seen, heard, and loved. What started as a step of obedience became a ministry rooted in compassion, faith, and the quiet power of presence.
+        </p>
+        <p>
+          This heartfelt memoir shares how God uses ordinary people and simple acts of kindness to reach broken hearts and spark something miraculous.
+        </p>
+        <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
+          <img src={images.amazonButton} alt="Buy on Amazon" class="amazon-btn" />
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Services Preview -->
-  <section class="section section--alt">
+  <!-- Author Section -->
+  <section class="author-section section">
+    <div class="container author-grid">
+      <div class="author-image">
+        <img src={images.headshot} alt="Cindy Love-Sprengel" />
+      </div>
+      <div class="author-content">
+        <p>
+          Cindy Love-Sprengel was born and raised in California City, a small town in the Mojave Desert. As an adult, she became a self-taught clown, discovering along the way that authenticity and joy are what truly bring a clown to life.
+        </p>
+        <p>
+          For 35 years, Cindy served as "Sparkle the Clown," using humor, compassion, and faith to bring comfort and connection to people of all ages. Through her work, she learned that joy can open doors where words cannot, and that even the smallest act of kindness can leave a lasting impact.
+        </p>
+        <p>
+          Cindy is a devoted mother of two and grandmother of four, whom she lovingly calls the light of her world. She now lives in Walla Walla, Washington with her husband, Lew. When she's not clowning, Cindy enjoys knitting, crocheting, and crafting. She also shares her home with three cats, two Shih Tzus, and one Yorkshire Terrier.
+        </p>
+        <p>
+          Through <strong><em>Clowning from the Heart</em></strong>, Cindy invites readers into her story of obedience, compassion, and the quiet power of bringing joy where it's needed most.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review Request Section -->
+  <section class="review-section section">
     <div class="container">
-      <SectionHeading
-        eyebrow="What We Offer"
-        heading="Services That Delight"
-        body="From intimate family celebrations to large community events, we have an entertainment package for every occasion."
-        align="center"
-      />
-      <div class="services-grid">
-        {[
-          { icon: '🎂', name: 'Birthday Parties', desc: 'Make their special day unforgettable with games, balloon art, and laughter.' },
-          { icon: '🏥', name: 'Hospital Visits', desc: 'Bringing smiles to patients and families when they need it most.' },
-          { icon: '🎡', name: 'Community Events', desc: 'Festivals, fairs, school events, and more — we light up the crowd.' },
-          { icon: '🏢', name: 'Corporate Events', desc: 'Add a unique and memorable touch to team celebrations and client events.' },
-        ].map((service) => (
-          <div class="service-card">
-            <div class="service-icon" aria-hidden="true">{service.icon}</div>
-            <h3>{service.name}</h3>
-            <p>{service.desc}</p>
-          </div>
-        ))}
-      </div>
-      <div class="section-cta">
-        <a href="/services" class="btn btn--primary">View All Services</a>
+      <h2>Help me share my book to the world</h2>
+      <div class="letter">
+        <p><em>Dear Friend,</em></p>
+        <p>
+          <em>Thank you for reading Clowning from the Heart! My hope is that Sparkle's journey has encouraged you, made you smile, and inspired you to see the ways God can use even the smallest acts of love to make a difference.</em>
+        </p>
+        <p>
+          <em>One of the most powerful ways to help others discover this story is by leaving a review on Amazon (and Goodreads, etc.). Your honest words can show how laughter, compassion, and obedience can touch lives and inspire hearts.</em>
+        </p>
+
+        <h3>Why Reviews Matter</h3>
+        <p>
+          <em>Your review helps readers see that ministry, faith, and hope can come in unexpected forms, one smile at a time. Even a few sentences can encourage someone to open this book and be transformed.</em>
+        </p>
+
+        <h3>How to Leave a Review</h3>
+        <ol>
+          <li><em>Go to the <a href={amazonUrl} target="_blank" rel="noopener noreferrer"><strong>Clowning from the Heart</strong></a> Amazon page</em></li>
+          <li><em>Scroll to <strong>Customer Reviews</strong></em></li>
+          <li><em>Click <strong>"Write a customer review"</strong></em></li>
+          <li><em>Share your thoughts — what part of Sparkle's story touched you most?</em></li>
+          <li><em>Give a star rating and click <strong>Submit</strong></em></li>
+        </ol>
+
+        <h3>Starter Ideas</h3>
+        <p><em>"This book reminded me that God can use anyone, anywhere, to bring light and joy."</em></p>
+        <p><em>"Cindy Love's story of Sparkle inspired me to look for ways to serve with compassion and love."</em></p>
+        <p><em>"From laughter to heartfelt moments, every page shows the power of presence, kindness, and faith."</em></p>
+
+        <h3>Thank You!</h3>
+        <p>
+          <em>Every review helps others discover the joy, hope, and love in this story. Your voice matters and can be part of spreading God's light — one smile at a time.</em>
+        </p>
+        <p><em>With gratitude,</em></p>
+        <p><strong><em>Cindy Love</em></strong></p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="section cta-section">
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="container">
-      <SectionHeading
-        eyebrow="Ready to Book?"
-        heading="Let's Create Something Magical"
-        body="Reach out today and let's plan an event that your guests will be talking about for years."
-        align="center"
-      />
-      <div class="section-cta">
-        <a href="/contact" class="btn btn--primary">Get in Touch</a>
-        <a href="/about" class="btn btn--outline">Our Story</a>
-      </div>
+      <p>&copy; {new Date().getFullYear()} Spirit Media &bull; All Rights Reserved</p>
     </div>
-  </section>
-
-  <!-- Contact Preview -->
-  <section class="section section--alt">
-    <div class="container contact-preview">
-      <SectionHeading
-        eyebrow="Contact Us"
-        heading="We'd Love to Hear From You"
-        body="Whether you have a question or you're ready to book, we're here and happy to help."
-      />
-      <div class="contact-details">
-        <div class="contact-item">
-          <span class="contact-icon" aria-hidden="true">📧</span>
-          <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon" aria-hidden="true">📞</span>
-          <a href="tel:5550000000">(555) 000-0000</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon" aria-hidden="true">📍</span>
-          <span>Your City, ST</span>
-        </div>
-      </div>
-      <a href="/contact" class="btn btn--primary" style="margin-top: 2rem; display: inline-block;">Contact Us</a>
-    </div>
-  </section>
-
+  </footer>
 </Layout>
 
 <style>
-  .intro-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
   }
 
-  .intro-card {
-    padding: 1.75rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero .subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 400;
+    margin: 0 0 2rem;
+    opacity: 0.9;
+  }
+
+  .amazon-btn {
+    display: inline-block;
+    max-width: 200px;
+    transition: transform 0.2s ease;
+  }
+
+  .amazon-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* Book Section */
+  .book-section {
     background: #fff;
   }
 
-  .intro-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
+  .book-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
   }
 
-  .intro-card h3 {
-    font-size: 1.125rem;
-    margin: 0 0 0.5rem;
+  @media (min-width: 768px) {
+    .book-grid {
+      grid-template-columns: 1fr 1.5fr;
+    }
+  }
+
+  .book-image img {
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .book-content h2 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    margin: 0 0 1.5rem;
     color: #1a1a1a;
+    line-height: 1.3;
   }
 
-  .intro-card p {
-    font-size: 0.9375rem;
-    color: #4b5563;
-    margin: 0;
+  .book-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0 0 1rem;
   }
 
-  .section--alt {
+  .book-content .amazon-btn {
+    margin-top: 1rem;
+  }
+
+  /* Author Section */
+  .author-section {
     background: #fafafa;
   }
 
-  .services-grid {
+  .author-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
   }
 
-  .service-card {
-    padding: 2rem 1.5rem;
-    border-radius: 0.75rem;
+  @media (min-width: 768px) {
+    .author-grid {
+      grid-template-columns: 280px 1fr;
+    }
+  }
+
+  .author-image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .author-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0 0 1rem;
+  }
+
+  /* Review Section */
+  .review-section {
     background: #fff;
-    border: 1px solid #e5e7eb;
+  }
+
+  .review-section h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
     text-align: center;
-  }
-
-  .service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .service-card h3 {
-    font-size: 1.0625rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem;
+    margin: 0 0 2rem;
     color: #1a1a1a;
   }
 
-  .service-card p {
-    font-size: 0.9rem;
-    color: #4b5563;
-    margin: 0;
+  .letter {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333;
   }
 
-  .cta-section {
-    background: linear-gradient(135deg, #fff0f0 0%, #fff8e1 100%);
+  .letter p {
+    margin: 0 0 1rem;
   }
 
-  .section-cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 0.5rem;
+  .letter h3 {
+    font-size: 1.25rem;
+    margin: 2rem 0 0.75rem;
+    color: #1a1a1a;
   }
 
-  .contact-preview {
-    display: grid;
-    gap: 2rem;
+  .letter ol {
+    margin: 0 0 1rem;
+    padding-left: 1.5rem;
   }
 
-  .contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  .letter li {
+    margin-bottom: 0.5rem;
   }
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1rem;
-    color: #374151;
-  }
-
-  .contact-item a {
-    color: #e63946;
-  }
-
-  .contact-item a:hover {
+  .letter a {
+    color: #cf2e2e;
     text-decoration: underline;
   }
 
-  .contact-icon {
-    font-size: 1.25rem;
+  .letter a:hover {
+    color: #a02020;
   }
 
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 1.75rem;
-    border-radius: 9999px;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background 0.15s, color 0.15s;
+  /* Footer */
+  .site-footer {
+    background: #1a1a1a;
+    color: #999;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
   }
 
-  .btn--primary {
-    background: #e63946;
-    color: #fff;
-  }
-
-  .btn--primary:hover {
-    background: #c1121f;
-  }
-
-  .btn--outline {
-    border: 2px solid #e63946;
-    color: #e63946;
-    background: transparent;
-  }
-
-  .btn--outline:hover {
-    background: #e63946;
-    color: #fff;
+  .site-footer p {
+    margin: 0;
   }
 </style>

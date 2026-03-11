@@ -1,0 +1,139 @@
+---
+import { siteName, footerNav, footerTagline, contactInfo, defaultDescription } from '../utils/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" aria-label={siteName}>
+        <span aria-hidden="true">🎪</span> {siteName}
+      </a>
+      <p class="footer-tagline">{footerTagline}</p>
+      <p class="footer-description">{defaultDescription}</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <p class="footer-nav-heading">Pages</p>
+      <ul role="list">
+        {footerNav.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="footer-contact">
+      <p class="footer-nav-heading">Contact</p>
+      <ul role="list" class="contact-list">
+        <li>
+          <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+        </li>
+        <li>
+          <a href={`tel:${contactInfo.phone.replace(/\D/g, '')}`}>{contactInfo.phone}</a>
+        </li>
+        <li>{contactInfo.location}</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {year} {siteName}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #1a1a1a;
+    color: #d1d5db;
+    margin-top: auto;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-block: 3.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer-inner {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.9375rem;
+    color: #f87171;
+    margin: 0 0 0.5rem;
+    font-style: italic;
+  }
+
+  .footer-description {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin: 0;
+    max-width: 30ch;
+    line-height: 1.6;
+  }
+
+  .footer-nav-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6b7280;
+    margin: 0 0 1rem;
+  }
+
+  .footer-nav ul,
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-nav a,
+  .footer-contact a {
+    font-size: 0.9375rem;
+    color: #d1d5db;
+    transition: color 0.15s;
+  }
+
+  .footer-nav a:hover,
+  .footer-contact a:hover {
+    color: #f87171;
+  }
+
+  .contact-list li {
+    font-size: 0.9375rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #374151;
+    padding-block: 1.25rem;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+</style>

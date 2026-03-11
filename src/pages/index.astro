@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<Layout
+  title="Clowning from the Heart — Joy, Laughter & Wonder"
+  description="Bringing joy, laughter, and wonder to events, parties, and special occasions. Professional clown entertainment for all ages."
+  canonicalPath="/"
+>
+
+  <!-- Hero -->
+  <Hero
+    title="Joy That Comes from the Heart"
+    intro="Professional clown entertainment that brings genuine laughter, warmth, and wonder to birthdays, events, hospitals, and more."
+    ctaPrimary={{ label: 'Book an Event', href: '/contact' }}
+    ctaSecondary={{ label: 'Learn More', href: '/about' }}
+  />
+
+  <!-- Intro / Overview -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Welcome"
+        heading="Entertainment That Connects People"
+        body="We believe laughter is a gift. Whether it's a child's birthday party, a community event, or a hospital visit, we bring the kind of joy that leaves a lasting impression."
+      />
+      <div class="intro-grid">
+        <div class="intro-card">
+          <div class="intro-icon" aria-hidden="true">🎈</div>
+          <h3>Genuine Connection</h3>
+          <p>Every performance is tailored to the audience, creating real moments of joy.</p>
+        </div>
+        <div class="intro-card">
+          <div class="intro-icon" aria-hidden="true">🌟</div>
+          <h3>All Ages Welcome</h3>
+          <p>From toddlers to grandparents, our entertainment resonates with everyone.</p>
+        </div>
+        <div class="intro-card">
+          <div class="intro-icon" aria-hidden="true">❤️</div>
+          <h3>Heartfelt Performance</h3>
+          <p>We don't just put on a show — we bring a piece of our heart to every event.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="section section--alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="What We Offer"
+        heading="Services That Delight"
+        body="From intimate family celebrations to large community events, we have an entertainment package for every occasion."
+        align="center"
+      />
+      <div class="services-grid">
+        {[
+          { icon: '🎂', name: 'Birthday Parties', desc: 'Make their special day unforgettable with games, balloon art, and laughter.' },
+          { icon: '🏥', name: 'Hospital Visits', desc: 'Bringing smiles to patients and families when they need it most.' },
+          { icon: '🎡', name: 'Community Events', desc: 'Festivals, fairs, school events, and more — we light up the crowd.' },
+          { icon: '🏢', name: 'Corporate Events', desc: 'Add a unique and memorable touch to team celebrations and client events.' },
+        ].map((service) => (
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">{service.icon}</div>
+            <h3>{service.name}</h3>
+            <p>{service.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/services" class="btn btn--primary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Ready to Book?"
+        heading="Let's Create Something Magical"
+        body="Reach out today and let's plan an event that your guests will be talking about for years."
+        align="center"
+      />
+      <div class="section-cta">
+        <a href="/contact" class="btn btn--primary">Get in Touch</a>
+        <a href="/about" class="btn btn--outline">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Preview -->
+  <section class="section section--alt">
+    <div class="container contact-preview">
+      <SectionHeading
+        eyebrow="Contact Us"
+        heading="We'd Love to Hear From You"
+        body="Whether you have a question or you're ready to book, we're here and happy to help."
+      />
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-icon" aria-hidden="true">📧</span>
+          <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <a href="tel:5550000000">(555) 000-0000</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon" aria-hidden="true">📍</span>
+          <span>Your City, ST</span>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn--primary" style="margin-top: 2rem; display: inline-block;">Contact Us</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .intro-card {
+    padding: 1.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #fff;
+  }
+
+  .intro-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro-card h3 {
+    font-size: 1.125rem;
+    margin: 0 0 0.5rem;
+    color: #1a1a1a;
+  }
+
+  .intro-card p {
+    font-size: 0.9375rem;
+    color: #4b5563;
+    margin: 0;
+  }
+
+  .section--alt {
+    background: #fafafa;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+    border-radius: 0.75rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #1a1a1a;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin: 0;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, #fff0f0 0%, #fff8e1 100%);
+  }
+
+  .section-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .contact-preview {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: #374151;
+  }
+
+  .contact-item a {
+    color: #e63946;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-icon {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .btn--primary {
+    background: #e63946;
+    color: #fff;
+  }
+
+  .btn--primary:hover {
+    background: #c1121f;
+  }
+
+  .btn--outline {
+    border: 2px solid #e63946;
+    color: #e63946;
+    background: transparent;
+  }
+
+  .btn--outline:hover {
+    background: #e63946;
+    color: #fff;
+  }
+</style>

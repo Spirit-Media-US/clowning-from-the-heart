@@ -7,9 +7,9 @@ export const defaultDescription =
 export const amazonUrl = 'https://www.amazon.com/Clowning-Heart-One-Smile-Time/dp/B0GN8JGRPM';
 
 export const images = {
-  heroBackground: 'https://clowningfromtheheart.com/wp-content/uploads/2026/01/heart-bokeh-on-old-pink-wall-texture-background-2026-01-09-06-47-14-utc-scaled.jpg',
-  reviewBackground: 'https://clowningfromtheheart.com/wp-content/uploads/2026/01/Hero.webp',
-  bookMockup: 'https://clowningfromtheheart.com/wp-content/uploads/2026/01/Clowning-from-the-Heart-Mock-up-4-768x1045.webp',
-  headshot: 'https://clowningfromtheheart.com/wp-content/uploads/2026/01/Headshot-1.jpeg',
-  amazonButton: 'https://clowningfromtheheart.com/wp-content/uploads/2026/02/buy-on-amazon-button-png-3-300x111.png',
+  heroBackground: 'https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg',
+  reviewBackground: 'https://cdn.sanity.io/images/zvhqn0sn/production/bb0672461fb970d6b3a5a93f6e5d67cb94aeb9f4-1920x1080.webp',
+  bookMockup: 'https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp',
+  headshot: 'https://cdn.sanity.io/images/zvhqn0sn/production/41a09e4b87cbb7de8f851e987d90e1dcb45155a9-640x610.jpg',
+  amazonButton: 'https://cdn.sanity.io/images/zvhqn0sn/production/3345b64a930065cb945a5f24b67a33446f4c26d5-300x111.png',
 };

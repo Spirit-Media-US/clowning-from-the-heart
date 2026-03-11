@@ -6,6 +6,7 @@ import { amazonUrl, images } from '../utils/site';
 <Layout>
   <!-- Hero / Announcement -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="container hero-inner">
       <h1>NOW AVAILABLE!</h1>
       <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
@@ -21,12 +22,12 @@ import { amazonUrl, images } from '../utils/site';
   </section>
 
   <!-- Book Section -->
-  <section class="book-section section">
+  <section class="book-section">
     <div class="container">
       <h2>One smile at a time changed thousands of lives starting with one unexpected calling</h2>
       <div class="book-text">
         <p>
-          <strong><em>Clowning from the Heart</em></strong> is the true story of Cindy Love's unexpected calling to become "Sparkle," a gospel clown who brought joy, hope, and God's love into hospitals, schools, parades, and places marked by pain.
+          <i><b>Clowning from the Heart</b></i> is the true story of Cindy Love's unexpected calling to become "Sparkle," a gospel clown who brought joy, hope, and God's love into hospitals, schools, parades, and places marked by pain.
         </p>
         <p>
           Through tender encounters with wounded children, skeptics, and strangers carrying heavy burdens, Cindy discovered a simple truth: healing often begins with being seen, heard, and loved. What started as a step of obedience became a ministry rooted in compassion, faith, and the quiet power of presence.
@@ -39,7 +40,7 @@ import { amazonUrl, images } from '../utils/site';
   </section>
 
   <!-- Author Section -->
-  <section class="author-section section">
+  <section class="author-section">
     <div class="container author-grid">
       <div class="author-image">
         <img src={images.headshot} alt="Cindy Love-Sprengel" />
@@ -55,7 +56,7 @@ import { amazonUrl, images } from '../utils/site';
           Cindy is a devoted mother of two and grandmother of four, whom she lovingly calls the light of her world. She now lives in Walla Walla, Washington with her husband, Lew. When she's not clowning, Cindy enjoys knitting, crocheting, and crafting. She also shares her home with three cats, two Shih Tzus, and one Yorkshire Terrier.
         </p>
         <p>
-          Through <strong><em>Clowning from the Heart</em></strong>, Cindy invites readers into her story of obedience, compassion, and the quiet power of bringing joy where it's needed most.
+          Through <i><b>Clowning from the Heart</b></i>, Cindy invites readers into her story of obedience, compassion, and the quiet power of bringing joy where it's needed most.
         </p>
       </div>
     </div>
@@ -63,6 +64,7 @@ import { amazonUrl, images } from '../utils/site';
 
   <!-- Review Request Section -->
   <section class="review-section">
+    <div class="review-overlay"></div>
     <div class="container review-inner">
       <h2>NOW AVAILABLE!</h2>
       <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
@@ -70,39 +72,39 @@ import { amazonUrl, images } from '../utils/site';
       </a>
       <h3 class="review-heading">Help me share my book to the world</h3>
       <div class="letter">
-        <p><em>Dear Friend,</em></p>
+        <p><i>Dear Friend,</i></p>
         <p>
-          <em>Thank you for reading Clowning from the Heart! My hope is that Sparkle's journey has encouraged you, made you smile, and inspired you to see the ways God can use even the smallest acts of love to make a difference.</em>
+          <i>Thank you for reading Clowning from the Heart! My hope is that Sparkle's journey has encouraged you, made you smile, and inspired you to see the ways God can use even the smallest acts of love to make a difference.</i>
         </p>
         <p>
-          <em>One of the most powerful ways to help others discover this story is by leaving a review on Amazon (and Goodreads, etc.). Your honest words can show how laughter, compassion, and obedience can touch lives and inspire hearts.</em>
-        </p>
-
-        <h4>Why Reviews Matter</h4>
-        <p>
-          <em>Your review helps readers see that ministry, faith, and hope can come in unexpected forms, one smile at a time. Even a few sentences can encourage someone to open this book and be transformed.</em>
+          <i>One of the most powerful ways to help others discover this story is by leaving a review on Amazon (and Goodreads, etc.). Your honest words can show how laughter, compassion, and obedience can touch lives and inspire hearts.</i>
         </p>
 
-        <h4>How to Leave a Review</h4>
+        <p><i><b>Why Reviews Matter</b></i></p>
+        <p>
+          <i>Your review helps readers see that ministry, faith, and hope can come in unexpected forms, one smile at a time. Even a few sentences can encourage someone to open this book and be transformed.</i>
+        </p>
+
+        <p><i><b>How to Leave a Review</b></i></p>
         <ol>
-          <li><em>Go to the <a href={amazonUrl} target="_blank" rel="noopener noreferrer"><strong>Clowning from the Heart</strong></a> Amazon page</em></li>
-          <li><em>Scroll to <strong>Customer Reviews</strong></em></li>
-          <li><em>Click <strong>"Write a customer review"</strong></em></li>
-          <li><em>Share your thoughts — what part of Sparkle's story touched you most?</em></li>
-          <li><em>Give a star rating and click <strong>Submit</strong></em></li>
+          <li><i>Go to the <a href={amazonUrl} target="_blank" rel="noopener noreferrer"><b>Clowning from the Heart</b></a> Amazon page</i></li>
+          <li><i>Scroll to <b>Customer Reviews</b></i></li>
+          <li><i>Click <b>"Write a customer review"</b></i></li>
+          <li><i>Share your thoughts, what part of Sparkle's story touched you most?</i></li>
+          <li><i>Give a star rating and click <b>Submit</b></i></li>
         </ol>
 
-        <h4>Starter Ideas</h4>
-        <p><em>"This book reminded me that God can use anyone, anywhere, to bring light and joy."</em></p>
-        <p><em>"Cindy Love's story of Sparkle inspired me to look for ways to serve with compassion and love."</em></p>
-        <p><em>"From laughter to heartfelt moments, every page shows the power of presence, kindness, and faith."</em></p>
+        <p><i><b>Starter Ideas</b></i></p>
+        <p><i>"This book reminded me that God can use anyone, anywhere, to bring light and joy."</i></p>
+        <p><i>"Cindy Love's story of Sparkle inspired me to look for ways to serve with compassion and love."</i></p>
+        <p><i>"From laughter to heartfelt moments, every page shows the power of presence, kindness, and faith."</i></p>
 
-        <h4>Thank You!</h4>
+        <p><i><b>Thank You!</b></i></p>
         <p>
-          <em>Every review helps others discover the joy, hope, and love in this story. Your voice matters and can be part of spreading God's light — one smile at a time.</em>
+          <i>Every review helps others discover the joy, hope, and love in this story. Your voice matters and can be part of spreading God's light — one smile at a time.</i>
         </p>
-        <p><em>With gratitude,</em></p>
-        <p><strong><em>Cindy Love</em></strong></p>
+        <p><i>With gratitude,</i></p>
+        <p><i><b>Cindy Love</b></i></p>
       </div>
     </div>
   </section>
@@ -118,30 +120,43 @@ import { amazonUrl, images } from '../utils/site';
 <style>
   /* Hero */
   .hero {
-    background-image: url('https://cdn.sanity.io/images/zvhqn0sn/production/9b6cddaa10dcdde490ace110dc718083373269fc-1280x720.jpg');
+    position: relative;
+    background-image: url('https://clowningfromtheheart.com/wp-content/uploads/2026/01/heart-bokeh-on-old-pink-wall-texture-background-2026-01-09-06-47-14-utc-scaled.jpg');
     background-size: cover;
     background-position: center;
-    color: #c2185b;
     text-align: center;
-    padding: 3rem 1.5rem 2rem;
+    padding: 50px 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    opacity: 0.5;
+    pointer-events: none;
   }
 
   .hero-inner {
-    max-width: 900px;
+    position: relative;
+    z-index: 1;
+    max-width: 1140px;
     margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 163px);
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    color: #d91c57;
     margin: 0 0 1rem;
-    letter-spacing: 0.05em;
-    color: #c2185b;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    line-height: 1;
   }
 
   .amazon-btn {
     display: inline-block;
-    max-width: 200px;
+    max-width: 300px;
     transition: transform 0.2s ease;
   }
 
@@ -150,152 +165,162 @@ import { amazonUrl, images } from '../utils/site';
   }
 
   .hero-grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    align-items: center;
     margin-top: 2rem;
+    max-width: 1140px;
   }
 
   .hero .subtitle {
-    font-size: clamp(1.3rem, 3vw, 2rem);
-    font-weight: 700;
-    color: #c2185b;
-    max-width: 300px;
+    font-family: 'Abril Fatface', serif;
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 900;
+    line-height: 1.2;
+    color: #d91c57;
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    align-self: center;
   }
 
   .hero-book img {
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 4px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   }
 
-  /* Sections shared */
-  .section {
-    padding: 4rem 1.5rem;
-  }
-
+  /* Container */
   .container {
-    max-width: 960px;
+    max-width: 1140px;
     margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   /* Book Section */
   .book-section {
     background: #fff;
-    text-align: left;
+    padding: 50px 0 25px;
   }
 
   .book-section h2 {
-    font-size: clamp(1.4rem, 3.5vw, 2rem);
-    margin: 0 0 1.5rem;
-    color: #1a1a1a;
-    line-height: 1.3;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(35px, 4vw, 50px);
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    color: #d91c57;
+    margin: 0 0 20px;
+    line-height: 1.2;
     text-align: center;
     text-transform: uppercase;
-    font-weight: 900;
   }
 
   .book-text {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
   }
 
   .book-text p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #333;
-    margin: 0 0 1rem;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #5f5f5f;
+    margin: 0 0 20px;
   }
 
   /* Author Section */
   .author-section {
     background: #fff;
+    padding: 25px 0 50px;
   }
 
   .author-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: start;
+    gap: 20px;
+    align-items: center;
   }
 
   @media (min-width: 768px) {
     .author-grid {
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
   .author-image img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    margin: 0 auto;
     display: block;
   }
 
+  .author-content {
+    align-self: center;
+  }
+
   .author-content p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #333;
-    margin: 0 0 1rem;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #5f5f5f;
+    margin: 0 0 20px;
   }
 
   /* Review Section */
   .review-section {
-    background-image: url('https://cdn.sanity.io/images/zvhqn0sn/production/9b6cddaa10dcdde490ace110dc718083373269fc-1280x720.jpg');
+    position: relative;
+    background-image: url('https://clowningfromtheheart.com/wp-content/uploads/2026/01/Hero.webp');
     background-size: cover;
-    background-position: center;
-    padding: 4rem 1.5rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+  }
+
+  .review-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: #000000;
+    opacity: 0.28;
+    pointer-events: none;
   }
 
   .review-inner {
+    position: relative;
+    z-index: 1;
     text-align: center;
   }
 
   .review-section h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #c2185b;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(35px, 4vw, 50px);
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    color: #ffffff;
     margin: 0 0 1rem;
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
   }
 
   .review-heading {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    color: #c2185b;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(35px, 4vw, 50px);
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    color: #ffffff;
     margin: 2rem 0 1.5rem;
-    font-weight: 900;
     text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
   }
 
   .letter {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #333;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #ffffff;
     text-align: left;
   }
 
   .letter p {
-    margin: 0 0 1rem;
-  }
-
-  .letter h4 {
-    font-size: 1.15rem;
-    margin: 1.5rem 0 0.75rem;
-    color: #c2185b;
-    font-weight: 700;
+    margin: 0 0 20px;
   }
 
   .letter ol {
-    margin: 0 0 1rem;
+    margin: 0 0 20px;
     padding-left: 1.5rem;
   }
 
@@ -304,24 +329,84 @@ import { amazonUrl, images } from '../utils/site';
   }
 
   .letter a {
-    color: #c2185b;
+    color: #00ff23;
     text-decoration: underline;
   }
 
   .letter a:hover {
-    color: #a02020;
+    color: #00cc1c;
   }
 
   /* Footer */
   .site-footer {
-    background: linear-gradient(90deg, #c2185b, #e91e63);
+    background-color: #d91c57;
     color: #fff;
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.9rem;
   }
 
   .site-footer p {
     margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero h1 {
+      font-size: 126px;
+    }
+
+    .book-section,
+    .author-section {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .review-section {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero h1 {
+      font-size: 60px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero .subtitle {
+      font-size: 30px;
+      line-height: 1.4;
+    }
+
+    .amazon-btn {
+      max-width: 62%;
+    }
+
+    .author-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .book-section h2,
+    .review-section h2,
+    .review-heading {
+      font-size: 35px;
+    }
+
+    .book-section {
+      padding: 25px 25px 0;
+    }
+
+    .author-section {
+      padding: 25px;
+    }
+
+    .review-section {
+      padding: 50px 25px;
+    }
   }
 </style>

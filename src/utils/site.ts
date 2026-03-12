@@ -6,6 +6,8 @@ export const defaultDescription =
 
 export const amazonUrl = 'https://www.amazon.com/Clowning-Heart-One-Smile-Time/dp/B0GN8JGRPM';
 
+export const ogImage = 'https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp';
+
 export const images = {
   heroBackground: 'https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg',
   reviewBackground: 'https://cdn.sanity.io/images/zvhqn0sn/production/bb0672461fb970d6b3a5a93f6e5d67cb94aeb9f4-1920x1080.webp',

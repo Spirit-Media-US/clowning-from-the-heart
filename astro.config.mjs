@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: process.env.PUBLIC_SITE_URL || 'https://yourdomain.com',
+  site: process.env.PUBLIC_SITE_URL || 'https://clowningfromtheheart.com',
   output: 'static',
   integrations: [sitemap()],
   server: { port: 4323, host: true },

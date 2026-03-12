@@ -14,7 +14,7 @@ import { amazonUrl, images } from '../utils/site';
       <h1 class="mt-4 mb-2 font-bebas text-[60px] font-semibold leading-none tracking-[1.4px] text-primary md:mb-6 md:text-[126px] lg:text-[163px]">
         NOW AVAILABLE!
       </h1>
-      <a href={amazonUrl} target="_blank" rel="noopener noreferrer" aria-label="Order now at Amazon" class="my-4 inline-block md:my-6">
+      <a href={amazonUrl} target="_blank" rel="noopener noreferrer" aria-label="Order now at Amazon" class="my-4 inline-block min-h-[44px] md:my-6">
         <img
           src={images.amazonButton}
           alt="Order now at Amazon"
@@ -87,7 +87,7 @@ import { amazonUrl, images } from '../utils/site';
       <h2 class="mb-2 font-bebas text-[35px] font-semibold tracking-[1.4px] text-white md:text-[clamp(35px,4vw,50px)]">
         NOW AVAILABLE!
       </h2>
-      <a href={amazonUrl} target="_blank" rel="noopener noreferrer" aria-label="Order now at Amazon">
+      <a href={amazonUrl} target="_blank" rel="noopener noreferrer" aria-label="Order now at Amazon" class="inline-block min-h-[44px]">
         <img
           src={images.amazonButton}
           alt="Order now at Amazon"
@@ -136,6 +136,6 @@ import { amazonUrl, images } from '../utils/site';
 
   <!-- Footer -->
   <footer class="bg-primary py-4 px-6 text-center text-sm text-white">
-    <p class="m-0">&copy; {new Date().getFullYear()} Sparkle. All rights reserved. Powered by <a href="https://spiritmedia.us" target="_blank" rel="noopener noreferrer" class="underline hover:text-white/80">Spirit Media</a>.</p>
+    <p class="m-0">&copy; {new Date().getFullYear()} Sparkle. All rights reserved. Powered by <a href="https://spiritmedia.us" target="_blank" rel="noopener noreferrer" class="inline-block min-h-[44px] leading-[44px] underline hover:text-white/80">Spirit Media</a>.</p>
   </footer>
 </Layout>

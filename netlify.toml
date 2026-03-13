@@ -13,7 +13,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.sanity.io data:; connect-src 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.sanity.io https://www.google-analytics.com data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com"
 
 [[headers]]
   for = "/_astro/*"
@@ -30,3 +30,13 @@
   to = "https://clowningfromtheheart.com/:splat"
   status = 301
   force = true
+
+# Deploy Previews for PRs (#43)
+[context.deploy-preview]
+  command = "bun run build"
+
+[context.deploy-preview.environment]
+  PUBLIC_SITE_URL = "https://deploy-preview--clowningfromtheheart.netlify.app"
+
+[context.branch-deploy]
+  command = "bun run build"

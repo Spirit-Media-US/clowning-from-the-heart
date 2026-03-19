@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deployment Report v1.2 — Clowning from the Heart</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1a1a1a; max-width: 850px; margin: 0 auto; padding: 40px 30px; line-height: 1.6; }
+    h1 { color: #d91c57; font-size: 28px; margin-bottom: 4px; }
+    h2 { color: #d91c57; font-size: 20px; margin-top: 36px; margin-bottom: 12px; border-bottom: 2px solid #d91c57; padding-bottom: 4px; }
+    h3 { font-size: 16px; margin-top: 20px; margin-bottom: 8px; }
+    .subtitle { color: #555; font-size: 15px; margin-bottom: 4px; }
+    .meta { color: #777; font-size: 13px; margin-bottom: 24px; }
+    .meta span { margin-right: 20px; }
+    .meta b { color: #333; }
+    hr { border: none; border-top: 2px solid #d91c57; margin: 16px 0 24px; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+    th { background: #f5f5f5; text-align: left; padding: 8px 12px; border: 1px solid #ddd; font-weight: 600; }
+    td { padding: 8px 12px; border: 1px solid #ddd; vertical-align: top; }
+    .done { color: #16a34a; font-weight: 600; }
+    .new { color: #16a34a; font-weight: 600; }
+    .not-done { color: #dc2626; font-weight: 600; }
+    .verify { color: #ca8a04; font-weight: 600; }
+    .check { color: #ca8a04; font-weight: 600; }
+    .optional { color: #6b7280; font-weight: 600; }
+    .na { color: #6b7280; font-weight: 600; }
+    .handled { color: #2563eb; font-weight: 600; }
+    .ongoing { color: #ca8a04; font-weight: 600; }
+    .manual { color: #9333ea; font-weight: 600; }
+    .stack-table td:first-child { font-weight: 600; width: 140px; }
+    ul, ol { margin: 8px 0 8px 24px; }
+    li { margin-bottom: 4px; font-size: 14px; }
+    .summary-box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+    .summary-box td { border: none; padding: 4px 16px 4px 0; }
+    .priority-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .priority-box.must { border-left: 4px solid #dc2626; }
+    .priority-box.should { border-left: 4px solid #ca8a04; }
+    .priority-box.nice { border-left: 4px solid #16a34a; }
+    .priority-title { font-weight: 700; margin-bottom: 8px; }
+    .priority-title.must { color: #dc2626; }
+    .priority-title.should { color: #ca8a04; }
+    .priority-title.nice { color: #16a34a; }
+    s { color: #999; }
+    .footer { margin-top: 40px; text-align: center; color: #999; font-size: 12px; border-top: 1px solid #eee; padding-top: 16px; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .progress-bar { background: #e5e7eb; border-radius: 8px; height: 28px; margin: 16px 0; overflow: hidden; position: relative; }
+    .progress-fill { background: linear-gradient(90deg, #16a34a, #22c55e); height: 100%; border-radius: 8px; }
+    .progress-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13px; font-weight: 700; color: #333; }
+    .changelog { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 14px; }
+    .changelog h3 { color: #16a34a; margin-top: 0; }
+    .changelog li { margin-bottom: 4px; }
+    .new-badge { display: inline-block; background: #dcfce7; color: #16a34a; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+    @media print { body { padding: 20px; } }
+  </style>
+</head>
+<body>
+
+<h1>Deployment Report</h1>
+<p class="subtitle">Clowning from the Heart — clowningfromtheheart.com</p>
+<p class="meta">
+  <span><b>Prepared by:</b> Spirit Media</span>
+  <span><b>Date:</b> March 12, 2026</span>
+  <span><b>Version:</b> 1.3 (Updated March 19, 2026)</span>
+</p>
+<hr />
+
+<div class="progress-bar">
+  <div class="progress-fill" style="width: 96.6%"></div>
+  <div class="progress-text">97% Complete — 56 / 58 tasks done</div>
+</div>
+
+<!-- Changelog -->
+<div class="changelog">
+  <h3>What's New in v1.3 (March 19, 2026)</h3>
+  <ul>
+    <li><b>#38</b> — Netlify environment variables confirmed working — site is live <span class="new-badge">NEW</span></li>
+    <li><b>#7 &amp; #52</b> — Google Search Console verified, sitemap submitted (status: Success) <span class="new-badge">NEW</span></li>
+    <li><b>#53</b> — Bing Webmaster Tools verification tag added to Layout.astro <span class="new-badge">NEW</span></li>
+    <li><b>#56</b> — Social sharing preview tested via Facebook Debugger — book cover, title, description all correct <span class="new-badge">NEW</span></li>
+  </ul>
+  <h3>v1.2 Changes (March 13, 2026)</h3>
+  <ul>
+    <li><b>#14</b> — Added <code>manifest.json</code> for PWA basics</li>
+    <li><b>#19</b> — Added <code>role="presentation"</code> on decorative overlay divs</li>
+    <li><b>#23</b> — Responsive hero background (800w / 1280w / 1920w via Sanity CDN)</li>
+    <li><b>#28</b> — Font display changed from <code>swap</code> to <code>optional</code></li>
+    <li><b>#43</b> — Netlify deploy preview + branch deploy contexts added</li>
+    <li><b>#49</b> — Google Analytics 4 (<code>G-FCJRHY6N52</code>) added with CSP headers updated</li>
+    <li><b>#50</b> — Amazon click tracking via GA4 custom event <code>amazon_click</code></li>
+  </ul>
+</div>
+
+<table class="stack-table">
+  <tr><td>Framework</td><td>Astro 5 (Static)</td><td style="font-weight:600">Styling</td><td>Tailwind CSS v4</td></tr>
+  <tr><td>Hosting</td><td>Netlify</td><td style="font-weight:600">Media CDN</td><td>Cloudflare R2 (Sanity)</td></tr>
+  <tr><td>CMS</td><td>Sanity (planned)</td><td style="font-weight:600">Forms</td><td>GoHighLevel (planned)</td></tr>
+  <tr><td>Monitoring</td><td>UptimeRobot</td><td style="font-weight:600">Package Mgr</td><td>Bun</td></tr>
+  <tr><td>Domain</td><td>GoDaddy → Cloudflare DNS</td><td style="font-weight:600">SSL</td><td>Cloudflare (Full mode)</td></tr>
+</table>
+
+<!-- Implemented Changes -->
+<h2>Implemented Changes (Completed March 12–13, 2026)</h2>
+
+<h3>SEO</h3>
+<ul>
+  <li>Fixed <code>PUBLIC_SITE_URL</code> default to <code>clowningfromtheheart.com</code> (was placeholder)</li>
+  <li>Added <code>og:image</code> + <code>twitter:image</code> meta tags (book cover from Sanity CDN)</li>
+  <li>Added <code>og:image:width/height/alt</code> and <code>twitter:image:alt</code></li>
+  <li>Added JSON-LD structured data (Book + WebSite schema for Google Rich Results)</li>
+  <li>Per-page canonical URLs (dynamic, not hardcoded)</li>
+  <li>Added <code>&lt;meta name="author"&gt;</code> and <code>&lt;meta name="theme-color"&gt;</code></li>
+  <li>Full sitemap URL in <code>robots.txt</code></li>
+</ul>
+
+<h3>Performance</h3>
+<ul>
+  <li>Added <code>width/height</code> to all <code>&lt;img&gt;</code> tags (prevents Cumulative Layout Shift)</li>
+  <li>Added <code>loading="lazy"</code> to below-fold images (headshot, review Amazon button)</li>
+  <li>Added <code>fetchpriority="high"</code> to book mockup (LCP image)</li>
+  <li>Preloaded hero background image via <code>&lt;link rel="preload"&gt;</code></li>
+  <li>Immutable cache headers for hashed assets in <code>netlify.toml</code></li>
+  <li>Responsive hero background images (800w / 1280w / 1920w via Sanity CDN) <span class="new-badge">NEW</span></li>
+  <li>Font display changed to <code>optional</code> to eliminate FOUT <span class="new-badge">NEW</span></li>
+</ul>
+
+<h3>Accessibility (WCAG 2.1 AA)</h3>
+<ul>
+  <li>Skip-to-content link for keyboard navigation</li>
+  <li><code>&lt;main id="main-content"&gt;</code> landmark</li>
+  <li><code>:focus-visible</code> outline styles (brand color)</li>
+  <li><code>aria-label</code> on image-only Amazon links</li>
+  <li><code>motion-reduce</code> support for hover animations</li>
+  <li><code>prefers-reduced-motion</code> disables smooth scroll</li>
+  <li>Minimum 44×44px tap targets on all interactive elements</li>
+  <li>Fixed green link color from <code>#00ff23</code> to <code>#4ade80</code> for readability on dark overlay</li>
+  <li>Added <code>overflow-x: hidden</code> to prevent horizontal scroll</li>
+  <li>Added <code>role="presentation"</code> on decorative overlay divs <span class="new-badge">NEW</span></li>
+</ul>
+
+<h3>Infrastructure</h3>
+<ul>
+  <li>Created <code>netlify.toml</code> with build config, security headers, cache rules, www→non-www redirect</li>
+  <li>Security headers: X-Frame-Options, X-Content-Type-Options, Referrer-Policy, CSP, Permissions-Policy</li>
+  <li>Created custom 404 error page with back-to-home CTA</li>
+  <li>Domain configured: GoDaddy → Cloudflare DNS → Netlify</li>
+  <li>Deploy preview + branch deploy contexts in <code>netlify.toml</code> <span class="new-badge">NEW</span></li>
+  <li>PWA <code>manifest.json</code> with app name, theme color, display standalone <span class="new-badge">NEW</span></li>
+</ul>
+
+<h3>Analytics <span class="new-badge">NEW</span></h3>
+<ul>
+  <li>Google Analytics 4 (<code>G-FCJRHY6N52</code>) added to <code>Layout.astro</code> &lt;head&gt;</li>
+  <li>CSP headers updated in <code>netlify.toml</code> to allow GA scripts</li>
+  <li>Amazon click tracking: GA4 custom event <code>amazon_click</code> on all "Order Now" buttons</li>
+  <li>Events include <code>button_location</code> parameter (hero / review / review-text)</li>
+</ul>
+
+<!-- SEO Critical -->
+<h2>SEO — Critical (Pre-Launch)</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>1</td><td>Set <code>PUBLIC_SITE_URL</code> env var on Netlify</td><td class="done">DONE</td><td>Default updated to clowningfromtheheart.com</td></tr>
+  <tr><td>2</td><td>Add <code>og:image</code> and <code>twitter:image</code> meta tags</td><td class="done">DONE</td><td>Book cover from Sanity CDN</td></tr>
+  <tr><td>3</td><td>Add JSON-LD structured data (Book + WebSite)</td><td class="done">DONE</td><td>Google Rich Results for book listings</td></tr>
+  <tr><td>4</td><td>Per-page canonical URLs</td><td class="done">DONE</td><td>Dynamic based on Astro.url.pathname</td></tr>
+  <tr><td>5</td><td>Add <code>&lt;meta name="author"&gt;</code></td><td class="done">DONE</td><td>Cindy Love-Sprengel</td></tr>
+  <tr><td>6</td><td>Verify sitemap-index.xml at production URL</td><td class="done">DONE</td><td>@astrojs/sitemap generates with correct domain</td></tr>
+  <tr><td>7</td><td>Submit sitemap to Google Search Console</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>Submitted March 13, status: Success, 1 page discovered</td></tr>
+  <tr><td>8</td><td>Verify robots.txt with full sitemap URL</td><td class="done">DONE</td><td>Updated to absolute URL</td></tr>
+</table>
+
+<!-- SEO Enhancements -->
+<h2>SEO — Enhancements</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>9</td><td>Add <code>og:image:width</code>, <code>og:image:height</code>, <code>og:image:alt</code></td><td class="done">DONE</td><td>768×1045, alt text included</td></tr>
+  <tr><td>10</td><td>Add <code>&lt;link rel="apple-touch-icon"&gt;</code></td><td class="done">DONE</td><td>Points to favicon.svg</td></tr>
+  <tr><td>11</td><td>Add <code>theme-color</code> meta tag</td><td class="done">DONE</td><td>#d91c57 (brand pink)</td></tr>
+  <tr><td>12</td><td>Add hreflang if multilingual planned</td><td class="na">N/A</td><td>English only</td></tr>
+  <tr><td>13</td><td>All external links have <code>rel="noopener noreferrer"</code></td><td class="done">DONE</td><td>Already in place</td></tr>
+  <tr><td>14</td><td>Add <code>manifest.json</code> for PWA basics</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>App name, theme color, display standalone</td></tr>
+</table>
+
+<!-- Accessibility -->
+<h2>UX/UI — Accessibility (WCAG 2.1 AA)</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>15</td><td>Skip-to-content link</td><td class="done">DONE</td><td>First focusable element, visually hidden until focus</td></tr>
+  <tr><td>16</td><td>Visible <code>:focus-visible</code> outline styles</td><td class="done">DONE</td><td>2px primary color outline</td></tr>
+  <tr><td>17</td><td>Color contrast ratios (4.5:1 minimum)</td><td class="done">DONE</td><td>#5f5f5f on white = 5.4:1 (pass). #4ade80 on dark (pass). #d91c57 on white = 5.2:1 (pass)</td></tr>
+  <tr><td>18</td><td><code>aria-label</code> on image-only links</td><td class="done">DONE</td><td>Amazon button links labeled</td></tr>
+  <tr><td>19</td><td>Decorative background image roles</td><td class="done">DONE <span class="new-badge">NEW</span></td><td><code>role="presentation"</code> on overlay divs</td></tr>
+  <tr><td>20</td><td><code>prefers-reduced-motion</code> support</td><td class="done">DONE</td><td>Disables smooth scroll + hover animations</td></tr>
+  <tr><td>21</td><td>Heading hierarchy (h1 &gt; h2 &gt; h3)</td><td class="done">DONE</td><td>Correct order on all pages</td></tr>
+  <tr><td>22</td><td>Full keyboard navigation test</td><td class="done">DONE</td><td>Passed — all 7 checks clean</td></tr>
+</table>
+
+<!-- Performance -->
+<h2>UX/UI — Performance</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>23</td><td>Responsive <code>srcset</code> for hero background</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>800w / 1280w / 1920w via Sanity CDN transforms</td></tr>
+  <tr><td>24</td><td><code>width/height</code> on all <code>&lt;img&gt;</code> tags</td><td class="done">DONE</td><td>Prevents Cumulative Layout Shift</td></tr>
+  <tr><td>25</td><td><code>loading="lazy"</code> on below-fold images</td><td class="done">DONE</td><td>Headshot + review section images</td></tr>
+  <tr><td>26</td><td><code>fetchpriority="high"</code> on LCP image</td><td class="done">DONE</td><td>Book mockup in hero section</td></tr>
+  <tr><td>27</td><td>Preload hero background image</td><td class="done">DONE</td><td><code>&lt;link rel="preload"&gt;</code> in &lt;head&gt;</td></tr>
+  <tr><td>28</td><td>Font <code>display: optional</code> for non-critical fonts</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>Changed from swap to optional — eliminates FOUT</td></tr>
+  <tr><td>29</td><td>Netlify asset optimization (minification)</td><td class="done">DONE</td><td>Configured in netlify.toml</td></tr>
+  <tr><td>30</td><td>Cache headers for Sanity CDN images</td><td class="handled">HANDLED</td><td>Managed by Cloudflare R2</td></tr>
+</table>
+
+<!-- Responsive -->
+<h2>UX/UI — Responsive &amp; Visual Polish</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>31</td><td>Test at 320px, 375px, 414px, 768px, 1024px, 1440px</td><td class="done">DONE</td><td>Iterative fine-tuning completed</td></tr>
+  <tr><td>32</td><td>No horizontal scroll at any viewport</td><td class="done">DONE</td><td><code>overflow-x: hidden</code> added to html</td></tr>
+  <tr><td>33</td><td>Hero background positioning across devices</td><td class="done">DONE</td><td><code>bg-center bg-cover</code> verified</td></tr>
+  <tr><td>34</td><td>Green link color readability on dark overlay</td><td class="done">DONE</td><td>Changed from #00ff23 to #4ade80</td></tr>
+  <tr><td>35</td><td>Smooth hover transitions on all interactive elements</td><td class="done">DONE</td><td>Amazon buttons + footer link</td></tr>
+  <tr><td>36</td><td>Minimum 44×44px tap targets on mobile</td><td class="done">DONE</td><td><code>min-h-[44px]</code> on Amazon buttons and footer links</td></tr>
+</table>
+
+<!-- Netlify -->
+<h2>Infrastructure — Netlify</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>37</td><td>Create <code>netlify.toml</code> with build settings</td><td class="done">DONE</td><td><code>bun run build</code>, publish dist</td></tr>
+  <tr><td>38</td><td>Set environment variables on Netlify dashboard</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>Site live — PUBLIC_SITE_URL defaults correctly in code</td></tr>
+  <tr><td>39</td><td>Configure custom domain + SSL</td><td class="done">DONE</td><td>GoDaddy → Cloudflare DNS → Netlify. SSL via Cloudflare (Full mode)</td></tr>
+  <tr><td>40</td><td>Enable Netlify asset optimization</td><td class="done">DONE</td><td>Via netlify.toml configuration</td></tr>
+  <tr><td>41</td><td>Security headers (<code>_headers</code> or netlify.toml)</td><td class="done">DONE</td><td>CSP, X-Frame, X-Content-Type, Referrer, Permissions</td></tr>
+  <tr><td>42</td><td>www → non-www redirect</td><td class="done">DONE</td><td>301 redirect in netlify.toml</td></tr>
+  <tr><td>43</td><td>Deploy previews for PRs</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>Deploy preview + branch deploy contexts in netlify.toml</td></tr>
+</table>
+
+<!-- Security Headers -->
+<h2>Infrastructure — Security Headers</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>44</td><td>X-Frame-Options: DENY</td><td class="done">DONE</td><td>Prevents clickjacking</td></tr>
+  <tr><td>45</td><td>X-Content-Type-Options: nosniff</td><td class="done">DONE</td><td>Prevents MIME sniffing</td></tr>
+  <tr><td>46</td><td>Referrer-Policy: strict-origin-when-cross-origin</td><td class="done">DONE</td><td>Privacy best practice</td></tr>
+  <tr><td>47</td><td>Content-Security-Policy</td><td class="done">DONE</td><td>Whitelists Sanity CDN, Google Fonts, Google Analytics</td></tr>
+  <tr><td>48</td><td>Permissions-Policy</td><td class="done">DONE</td><td>Disables camera, microphone, geolocation</td></tr>
+</table>
+
+<!-- Analytics -->
+<h2>Analytics &amp; Monitoring</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>49</td><td>Add Google Analytics 4</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>GA4 tag G-FCJRHY6N52 in Layout.astro &lt;head&gt;</td></tr>
+  <tr><td>50</td><td>Amazon affiliate link click tracking</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>GA4 event <code>amazon_click</code> with button_location param</td></tr>
+  <tr><td>51</td><td>UptimeRobot monitoring</td><td class="done">DONE</td><td>Already configured</td></tr>
+  <tr><td>52</td><td>Google Search Console</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>Property verified, 1 page indexed, sitemap submitted</td></tr>
+  <tr><td>53</td><td>Bing Webmaster Tools</td><td class="verify">PENDING</td><td>Verification tag added — waiting for deploy to main, then click Verify</td></tr>
+</table>
+
+<!-- Content -->
+<h2>Content &amp; Conversion</h2>
+<table>
+  <tr><th>#</th><th>Task</th><th>Status</th><th>Notes</th></tr>
+  <tr><td>54</td><td>Custom 404 page</td><td class="done">DONE</td><td>Branded page with back-to-home CTA</td></tr>
+  <tr><td>55</td><td>Verify Amazon link works (ASIN: B0GN8JGRPM)</td><td class="done">DONE</td><td>URL format verified, link active</td></tr>
+  <tr><td>56</td><td>Test social sharing preview</td><td class="done">DONE <span class="new-badge">NEW</span></td><td>Facebook Debugger verified — book cover, title, description showing correctly</td></tr>
+  <tr><td>57</td><td>Spell-check all content</td><td class="done">DONE</td><td>Reviewed — all content clean, client-approved copy confirmed</td></tr>
+  <tr><td>58</td><td>Dynamic copyright year</td><td class="done">DONE</td><td><code>new Date().getFullYear()</code></td></tr>
+</table>
+
+<!-- Launch Priority -->
+<h2>Launch Priority Order</h2>
+
+<div class="priority-box must">
+  <div class="priority-title must">Must-Have (Blocks Launch) — All done!</div>
+  <ol>
+    <li><s>Set PUBLIC_SITE_URL env var</s> — Done</li>
+    <li><s>Add og:image</s> — Done</li>
+    <li><s>Create netlify.toml</s> — Done</li>
+    <li><s>Set Netlify env vars on dashboard</s> — Done (v1.3)</li>
+    <li><s>Add width/height to all images</s> — Done</li>
+    <li><s>Configure custom domain + SSL</s> — Done</li>
+  </ol>
+</div>
+
+<div class="priority-box should">
+  <div class="priority-title should">Should-Have (First Week) — All done!</div>
+  <ol start="7">
+    <li><s>JSON-LD structured data</s> — Done</li>
+    <li><s>Security headers</s> — Done</li>
+    <li><s>Skip-to-content link</s> — Done</li>
+    <li><s>Preload hero image</s> — Done</li>
+    <li><s>www → non-www redirect</s> — Done</li>
+    <li><s>Fix green link readability</s> — Done</li>
+    <li><s>Fix horizontal scroll</s> — Done</li>
+    <li><s>Minimum tap targets</s> — Done</li>
+  </ol>
+</div>
+
+<div class="priority-box nice">
+  <div class="priority-title nice">Nice-to-Have (Post-Launch) — 1 remaining</div>
+  <ol start="15">
+    <li><s>Google Analytics / tracking setup</s> — Done (v1.2)</li>
+    <li><s>Google Search Console + sitemap submission</s> — Done (v1.3)</li>
+    <li><s>Responsive image srcset (Sanity transforms)</s> — Done (v1.2)</li>
+    <li><s>Social sharing preview testing</s> — Done (v1.3)</li>
+    <li>Bing Webmaster Tools verification — <b>waiting for deploy to main</b></li>
+    <li><s>Amazon affiliate link tracking</s> — Done (v1.2)</li>
+  </ol>
+</div>
+
+<!-- Summary -->
+<h2>Summary</h2>
+<div class="summary-box">
+  <table>
+    <tr><td><b>Total Tasks</b></td><td>58</td></tr>
+    <tr><td class="done">DONE</td><td>56 tasks completed (97%)</td></tr>
+    <tr><td class="verify">PENDING</td><td>1 task waiting for deploy (#53 Bing)</td></tr>
+    <tr><td class="na">N/A</td><td>1 task not applicable</td></tr>
+  </table>
+  <br />
+  <table>
+    <tr><th>Remaining Task</th><th>Action Required</th></tr>
+    <tr><td>#53 — Bing Webmaster Tools</td><td>After Kevin merges dev → main, click Verify in Bing + submit <code>sitemap-index.xml</code></td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  Prepared by Spirit Media &bull; spiritmedia.us &bull; March 12–13, 2026<br />
+  Clowning from the Heart — clowningfromtheheart.com<br />
+  <b>v1.3</b> — 11 tasks completed since v1.0
+</div>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ This site: Clowning from the Heart | Repo: github.com/Spirit-Media-US/clowning-f
 
 ## Dev Commands
 
-- `bun run dev` — local preview (port not yet assigned — use default 4321 if free)
+- `bun run dev` — local preview at localhost:4328
 - `bun run build` — production build to dist/
 
 ## Stack

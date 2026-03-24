@@ -6,7 +6,7 @@ export default defineConfig({
   site: process.env.PUBLIC_SITE_URL || 'https://clowningfromtheheart.com',
   output: 'static',
   integrations: [sitemap()],
-  server: { port: 4323, host: true },
+  server: { port: 4328, host: true },
   vite: {
     plugins: [tailwindcss()],
     server: {

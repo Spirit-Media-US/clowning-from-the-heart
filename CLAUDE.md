@@ -9,6 +9,15 @@ This site: Clowning from the Heart | Repo: github.com/Spirit-Media-US/clowning-f
 - `bun run dev` — local preview at localhost:4328
 - `bun run build` — production build to dist/
 
+## Mandatory — Before Starting Work
+Always start Claude sessions from inside this directory:
+```
+cd ~/Sites/clowning-from-the-heart && claude
+```
+Running Claude from ~/ or ~/Sites/ bypasses this project's CLAUDE.md. A pre-edit hook enforces this, but following the workflow prevents warnings and ensures all project rules are loaded.
+
+Then run: `git checkout dev && git pull origin dev`
+
 ## Stack
 
 - Astro 5 + Tailwind CSS v4

@@ -51,3 +51,4 @@ public/documents/
 # allow favicon
 !public/favicon.svg
 *.bak
+.mcp.json

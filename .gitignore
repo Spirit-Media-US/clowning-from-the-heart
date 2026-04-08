@@ -52,3 +52,5 @@ public/documents/
 !public/favicon.svg
 *.bak
 .mcp.json
+.netlify/
+.sanity/

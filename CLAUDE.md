@@ -4,6 +4,10 @@
 
 This site: Clowning from the Heart | Repo: github.com/Spirit-Media-US/clowning-from-the-heart | Domain: clowningfromtheheart.com | Sanity ID: zvhqn0sn
 
+**Migration protocol:** /home/deploy/bin/tools-api/pipelines/migration/CLAUDE.md
+**Sanity Studio:** Embedded at clowningfromtheheart.com/studio/ (static build)
+**Infrastructure:** Deploy webhook wired, CORS origins configured, studio deployed
+
 ## Dev Commands
 
 - `bun run dev` — local preview at localhost:4328
@@ -28,17 +32,18 @@ Then run: `git checkout dev && git pull origin dev`
 - Google Search Console verified
 - GHL forms — placeholder only, not yet wired
 
-## Status — as of 2026-03-19
+## Status — as of 2026-04-08
 
 ### Completed & Live on Main
 - Full site built and deployed to clowningfromtheheart.com
 - Responsive hero with watercolor background (sm/md/lg breakpoints)
 - Amazon purchase button in hero
 - Deployment report committed (deployment-report.html)
+- Sanity Studio embedded at /studio with deploy webhook and CORS configured
 
 ### Still Pending
 - GHL contact form — not yet wired
-- Sanity Studio — scaffolded but not populated
+- Sanity content population
 
 ## Rules
 

@@ -26,6 +26,11 @@
     Cache-Control = "public, max-age=86400"
 
 [[redirects]]
+  from = "/static/*"
+  to = "/studio/static/:splat"
+  status = 200
+
+[[redirects]]
   from = "https://www.clowningfromtheheart.com/*"
   to = "https://clowningfromtheheart.com/:splat"
   status = 301

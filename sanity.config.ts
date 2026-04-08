@@ -9,6 +9,7 @@ export default defineConfig({
   title: 'Clowning From The Heart',
   projectId: 'zvhqn0sn',
   dataset: 'production',
+  basePath: '/studio',
   plugins: [structureTool(), visionTool(), media()],
   schema: { types: schemaTypes },
 })

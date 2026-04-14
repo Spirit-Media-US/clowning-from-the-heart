@@ -16,7 +16,7 @@ This site: Clowning from the Heart | Repo: github.com/Spirit-Media-US/clowning-f
 ## Mandatory — Before Starting Work
 Always start Claude sessions from inside this directory:
 ```
-cd ~/Sites/clowning-from-the-heart && claude
+cd /srv/sites/clowning-from-the-heart && claude
 ```
 Running Claude from ~/ or ~/Sites/ bypasses this project's CLAUDE.md. A pre-edit hook enforces this, but following the workflow prevents warnings and ensures all project rules are loaded.
 

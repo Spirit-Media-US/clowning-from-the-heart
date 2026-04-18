@@ -17,7 +17,7 @@ export const images = {
   heroBackgroundSm: `${heroBase}?w=800&fm=webp&q=75`,
   heroBackgroundMd: `${heroBase}?w=1280&fm=webp&q=80`,
   heroBackgroundLg: `${heroBase}?w=1920&fm=webp&q=80`,
-  reviewBackground: 'https://cdn.sanity.io/images/zvhqn0sn/production/bb0672461fb970d6b3a5a93f6e5d67cb94aeb9f4-1920x1080.webp?w=1600&fm=webp&q=80',
+  reviewBackground: 'https://cdn.sanity.io/images/zvhqn0sn/production/bb0672461fb970d6b3a5a93f6e5d67cb94aeb9f4-1920x1080.webp?w=1200&fm=webp&q=70',
   bookMockup: `${bookMockupBase}?w=640&fm=webp&q=80`,
   bookMockupSm: `${bookMockupBase}?w=480&fm=webp&q=80`,
   bookMockupLg: `${bookMockupBase}?w=880&fm=webp&q=80`,

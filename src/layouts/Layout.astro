@@ -82,23 +82,48 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Preload hero background (LCP) — responsive sizes -->
-    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=800&auto=format" media="(max-width: 767px)" />
-    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1280&auto=format" media="(min-width: 768px) and (max-width: 1279px)" />
-    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1920&auto=format" media="(min-width: 1280px)" />
+    <!-- Preconnect to image CDN (LCP on Sanity) -->
+    <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
+
+    <!-- Preload book mockup (LCP on mobile) -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=480&fm=webp&q=80"
+      imagesrcset="https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=480&fm=webp&q=80 480w, https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=640&fm=webp&q=80 640w, https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=880&fm=webp&q=80 880w"
+      imagesizes="(min-width: 1024px) 440px, (min-width: 768px) 440px, 70vw"
+      fetchpriority="high"
+    />
+
+    <!-- Preload hero background (LCP) — responsive sizes, webp -->
+    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=800&fm=webp&q=75" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1280&fm=webp&q=80" media="(min-width: 768px) and (max-width: 1279px)" />
+    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1920&fm=webp&q=80" media="(min-width: 1280px)" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Abril+Fatface&display=optional" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCJRHY6N52" is:inline></script>
+    <!-- Google Analytics — deferred until idle to reduce unused JS on LCP -->
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FCJRHY6N52');
+      (function(){
+        function loadGA(){
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FCJRHY6N52';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){dataLayer.push(arguments);};
+          gtag('js', new Date());
+          gtag('config', 'G-FCJRHY6N52');
+        }
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGA, { timeout: 4000 });
+        } else {
+          window.addEventListener('load', function(){ setTimeout(loadGA, 1500); });
+        }
+      })();
     </script>
   </head>
   <body>

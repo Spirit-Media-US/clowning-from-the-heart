@@ -100,10 +100,10 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
     <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1280&fm=webp&q=80" media="(min-width: 768px) and (max-width: 1279px)" />
     <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1920&fm=webp&q=80" media="(min-width: 1280px)" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Abril+Fatface&display=optional" rel="stylesheet" />
+    <!-- Fonts — self-hosted from R2 -->
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2" crossorigin />
+    <style is:global set:html={`@font-face{font-family:'Abril Fatface';font-style:normal;font-weight:400;font-display:swap;src:url('https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2') format('woff2');}@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2') format('woff2');}`}></style>
 
     <!-- Google Analytics — lazy-load on user interaction or after load (keeps LCP fast) -->
     <script is:inline>

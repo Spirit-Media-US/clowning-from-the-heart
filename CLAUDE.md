@@ -32,7 +32,7 @@ Then run: `git checkout dev && git pull origin dev`
 - Google Search Console verified
 - GHL forms — placeholder only, not yet wired
 
-## Status — as of 2026-04-08
+## Status — as of 2026-04-19
 
 ### Completed & Live on Main
 - Full site built and deployed to clowningfromtheheart.com
@@ -40,6 +40,18 @@ Then run: `git checkout dev && git pull origin dev`
 - Amazon purchase button in hero
 - Deployment report committed (deployment-report.html)
 - Sanity Studio embedded at /studio with deploy webhook and CORS configured
+
+### On dev (awaiting Kevin merge → main)
+- **100 Club wave 2 (2026-04-19):** Beasties (`@playform/inline`) wired + `inlineStylesheets: 'auto'`
+  - `@font-face` moved out of `<style is:global>` into `src/styles/global.css` (Tailwind v4 compliant, per performance-gate.md)
+  - Both Bebas Neue + Abril Fatface preloaded (both above-fold)
+  - Mobile 98→99, Desktop 100 on dev preview (SEO 69 is CF Pages `x-robots-tag: noindex` on `.pages.dev` — production is 100)
+- **Fonts (2026-04-18):** Self-hosted from R2 (`ff3e196`)
+- **GA lazy-loaded (2026-04-18):** Deferred on first interaction or +6s fallback
+- GA4 analytics integrated
+- Amazon click tracking added
+- Bing Webmaster Tools verified
+- Google Search Console verified
 
 ### Still Pending
 - GHL contact form — not yet wired

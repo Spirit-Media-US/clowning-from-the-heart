@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { siteName, siteUrl, defaultTitle, defaultDescription, ogImage } from '../utils/site';
+import { siteName, siteUrl, defaultTitle, defaultDescription, ogImage, images } from '../utils/site';
 
 interface Props {
   title?: string;
@@ -21,14 +21,139 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="Cindy Love-Sprengel" />
-    <meta name="theme-color" content="#d91c57" />
-    <meta name="msvalidate.01" content="477910DF31D77AFDFCAE62DF5E095405" />
+
+    <!-- ======== Priority hints — LCP-critical resources discovered first ======== -->
+    <!-- Preconnect to image CDN + R2 origin (fonts + hero all share R2) -->
+    <link rel="preconnect" href="https://assets.spiritmediapublishing.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
+
+    <!-- Preload critical fonts (both used above the fold) -->
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2" crossorigin />
+
+    <!-- Preload book mockup LCP (matches img srcset exactly) -->
+    <link
+      rel="preload"
+      as="image"
+      href={images.bookMockupSm}
+      imagesrcset={`${images.bookMockupSm} 480w, ${images.bookMockup} 640w, ${images.bookMockupLg} 880w`}
+      imagesizes="(min-width: 1024px) 440px, (min-width: 768px) 440px, 70vw"
+      fetchpriority="high"
+    />
+
+    <!-- Preload hero responsive background (one per breakpoint — only active one fetches) -->
+    <link rel="preload" as="image" href={images.heroBackgroundSm} media="(max-width: 767px)" />
+    <link rel="preload" as="image" href={images.heroBackgroundMd} media="(min-width: 768px) and (max-width: 1279px)" />
+    <link rel="preload" as="image" href={images.heroBackgroundLg} media="(min-width: 1280px)" />
+
+    <!-- Per-page head-early slot (reserved for future per-page LCP preloads) -->
+    <slot name="head-early" />
+
+    <!-- ======== Critical CSS — hand-rolled, @layer base wrapped ========
+         @font-face and @keyframes stay at top level (CSS spec forbids them inside @layer).
+         Everything else inside @layer base so Tailwind's @layer utilities wins the cascade
+         when the async bundle arrives. Do NOT add opacity transitions to data-animate (if
+         that pattern is added later) — Lighthouse catches mid-fade. Docs:
+         /home/deploy/.claude/projects/-home-deploy/memory/reference_100club_cascade_rules.md -->
+    <style is:inline>
+      @font-face{font-family:'Abril Fatface';font-style:normal;font-weight:400;font-display:swap;src:url('https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2') format('woff2')}
+      @font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2') format('woff2')}
+
+      @layer base {
+        /* Resets */
+        *,*::before,*::after{box-sizing:border-box;border:0 solid}
+        html{-webkit-text-size-adjust:100%;line-height:1.5;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;overflow-x:hidden}
+        body{margin:0;font-family:Tahoma,Geneva,Verdana,sans-serif;color:#5f5f5f}
+        img,picture,svg,video,canvas{display:block;max-width:100%;height:auto}
+        h1,h2,h3,h4,h5,h6{margin:0;overflow-wrap:break-word}
+        p{margin:0;overflow-wrap:break-word}
+        a{color:inherit;text-decoration:none}
+        button{font:inherit;color:inherit;background:transparent;cursor:pointer;padding:0;border:0}
+
+        /* Brand tokens used across critical CSS (match @theme in global.css) */
+        :root,:host{--color-primary:#d91c57}
+
+        /* Tailwind utility copies used above the fold */
+        .relative{position:relative}.absolute{position:absolute}.fixed{position:fixed}
+        .inset-0{inset:0}.top-4{top:1rem}.left-4{left:1rem}.z-10{z-index:10}.z-50{z-index:50}
+        .flex{display:flex}.inline-flex{display:inline-flex}.inline-block{display:inline-block}.grid{display:grid}.block{display:block}.hidden{display:none}
+        .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+        .items-center{align-items:center}
+        .gap-4{gap:1rem}
+        .order-1{order:1}.order-2{order:2}
+        .self-center{align-self:center}
+        .mx-auto{margin-inline:auto}
+        .mt-4{margin-top:1rem}.mb-2{margin-bottom:.5rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}
+        .px-4{padding-inline:1rem}.py-2{padding-block:.5rem}
+        .w-full{width:100%}.h-auto{height:auto}
+        .max-w-\[1140px\]{max-width:1140px}
+        .max-w-\[440px\]{max-width:440px}
+        .max-w-\[55\%\]{max-width:55%}
+        .min-h-\[44px\]{min-height:44px}
+        .py-\[25px\]{padding-block:25px}
+        .pointer-events-none{pointer-events:none}
+        .text-center{text-align:center}
+        .leading-none{line-height:1}
+        .leading-\[1\.4\]{line-height:1.4}
+        .tracking-\[1\.4px\]{letter-spacing:1.4px}
+        .text-\[24px\]{font-size:24px}.text-\[30px\]{font-size:30px}
+        .font-semibold{font-weight:600}.font-black{font-weight:900}
+        .font-bebas{font-family:'Bebas Neue',sans-serif}
+        .font-abril{font-family:'Abril Fatface',serif}
+        .text-primary{color:#d91c57}
+        .text-white{color:#fff}
+        .bg-primary{background-color:#d91c57}
+        .bg-white\/50{background-color:rgba(255,255,255,.5)}
+        .bg-cover{background-size:cover}
+        .bg-center{background-position:center}
+        .rounded{border-radius:.25rem}
+        .transition-transform{transition:transform .15s ease}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        .focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:inherit;margin:inherit;overflow:visible;clip:auto;white-space:normal}
+        .focus\:fixed:focus{position:fixed}
+        .focus\:top-4:focus{top:1rem}
+        .focus\:left-4:focus{left:1rem}
+        .focus\:z-50:focus{z-index:50}
+        .focus\:rounded:focus{border-radius:.25rem}
+        .focus\:bg-primary:focus{background-color:#d91c57}
+        .focus\:px-4:focus{padding-inline:1rem}
+        .focus\:py-2:focus{padding-block:.5rem}
+        .focus\:text-white:focus{color:#fff}
+
+        @media(min-width:768px){
+          .md\:mt-8{margin-top:2rem}
+          .md\:mb-4{margin-bottom:1rem}
+          .md\:gap-8{gap:2rem}
+          .md\:py-\[35px\]{padding-block:35px}
+          .md\:max-w-\[350px\]{max-width:350px}
+          .md\:text-\[50px\]{font-size:50px}
+          .md\:text-\[clamp\(30px\2c 4vw\2c 50px\)\]{font-size:clamp(30px,4vw,50px)}
+          .md\:leading-\[1\.2\]{line-height:1.2}
+        }
+        @media(min-width:1024px){
+          .lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+          .lg\:order-1{order:1}
+          .lg\:order-2{order:2}
+          .lg\:text-left{text-align:left}
+          .lg\:text-\[65px\]{font-size:65px}
+        }
+        @media(prefers-reduced-motion:reduce){
+          .motion-reduce\:hover\:scale-100:hover{transform:scale(1)}
+          .hover\:scale-105:hover{transform:none}
+        }
+        @media(hover:hover){
+          .hover\:scale-105:hover{transform:scale(1.05)}
+        }
+      }
+    </style>
 
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Cindy Love-Sprengel" />
+    <meta name="theme-color" content="#d91c57" />
+    <meta name="msvalidate.01" content="477910DF31D77AFDFCAE62DF5E095405" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -47,6 +172,9 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content="Clowning from the Heart — One Smile at a Time book cover" />
+
+    <!-- Per-page head slot (JSON-LD overrides, extra meta) -->
+    <slot name="head" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -78,34 +206,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
       ]
     })} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Preconnect to image CDN (LCP on Sanity) -->
-    <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
-
-    <!-- Preload book mockup (LCP on mobile) -->
-    <link
-      rel="preload"
-      as="image"
-      href="https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=480&fm=webp&q=80"
-      imagesrcset="https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=480&fm=webp&q=80 480w, https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=640&fm=webp&q=80 640w, https://cdn.sanity.io/images/zvhqn0sn/production/413ca0226d1dfa92f70f5ba6849f3a7e84bd2f18-768x1045.webp?w=880&fm=webp&q=80 880w"
-      imagesizes="(min-width: 1024px) 440px, (min-width: 768px) 440px, 70vw"
-      fetchpriority="high"
-    />
-
-    <!-- Preload hero background (LCP) — responsive sizes, webp -->
-    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=800&fm=webp&q=75" media="(max-width: 767px)" />
-    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1280&fm=webp&q=80" media="(min-width: 768px) and (max-width: 1279px)" />
-    <link rel="preload" as="image" href="https://cdn.sanity.io/images/zvhqn0sn/production/fb8dc970940222bd585caa544a1203f1b00f8110-2560x1920.jpg?w=1920&fm=webp&q=80" media="(min-width: 1280px)" />
-
-    <!-- Fonts — self-hosted from R2. @font-face declarations live in src/styles/global.css
-         (Beasties-compatible). Both fonts render inside the hero above the fold. -->
-    <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2" crossorigin />
-
-    <!-- Google Analytics — lazy-load on user interaction or after load (keeps LCP fast) -->
+    <!-- Google Analytics — interaction-triggered with 8s fallback (Kohler/SMP pattern) -->
     <script is:inline>
       (function(){
         var loaded = false;
@@ -122,12 +223,15 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
           gtag('config', 'G-FCJRHY6N52');
         }
         var evts = ['scroll','mousemove','touchstart','keydown','click'];
-        function onInteract(){ evts.forEach(function(e){ window.removeEventListener(e, onInteract, { passive: true }); }); loadGA(); }
+        function onInteract(){ evts.forEach(function(e){ window.removeEventListener(e, onInteract); }); loadGA(); }
         evts.forEach(function(e){ window.addEventListener(e, onInteract, { passive: true, once: true }); });
-        // Safety net: load after 6s if no interaction
-        setTimeout(loadGA, 6000);
+        setTimeout(loadGA, 8000);
       })();
     </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-white">

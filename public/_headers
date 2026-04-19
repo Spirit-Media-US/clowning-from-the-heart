@@ -1,6 +1,15 @@
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
+  X-Robots-Tag: index, follow
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://assets.spiritmediapublishing.com; img-src 'self' https://cdn.sanity.io https://www.google-analytics.com https://assets.spiritmediapublishing.com data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; frame-src https://www.youtube.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://assets.spiritmediapublishing.com; img-src 'self' https://cdn.sanity.io https://www.google-analytics.com https://assets.spiritmediapublishing.com data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://zvhqn0sn.api.sanity.io https://cloudflareinsights.com; frame-src https://www.youtube.com; base-uri 'self'
+  Link: <https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
+  Link: <https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
+
+# Homepage — additional Early Hint for the book-mockup LCP image (R2-hosted, stable URL)
+/
+  Link: <https://assets.spiritmediapublishing.com/clowning-from-the-heart/book-mockup-sm.webp>; rel=preload; as=image; fetchpriority=high
+# Link: headers above CF Pages promotes to 103 Early Hints on cached edge hits
+# (20-30% LCP win, CF BFCM data). Only stable URLs — hashed CSS filenames change.

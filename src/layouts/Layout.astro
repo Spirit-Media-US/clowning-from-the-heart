@@ -31,15 +31,14 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
     <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2" crossorigin />
 
-    <!-- Preload book mockup LCP — DESKTOP ONLY (mobile hides the image per §6 mobile LCP pattern) -->
+    <!-- Preload book mockup LCP (matches img srcset exactly) -->
     <link
       rel="preload"
       as="image"
-      href={images.bookMockup}
-      imagesrcset={`${images.bookMockup} 640w, ${images.bookMockupLg} 880w`}
-      imagesizes="440px"
+      href={images.bookMockupSm}
+      imagesrcset={`${images.bookMockupSm} 480w, ${images.bookMockup} 640w, ${images.bookMockupLg} 880w`}
+      imagesizes="(min-width: 1024px) 440px, (min-width: 768px) 440px, 70vw"
       fetchpriority="high"
-      media="(min-width: 1024px)"
     />
 
     <!-- Preload hero responsive background (one per breakpoint — only active one fetches) -->

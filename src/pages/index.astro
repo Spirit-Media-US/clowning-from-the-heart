@@ -1,4 +1,5 @@
 ---
+import HundredClubBadge from '../components/HundredClubBadge.astro';
 import Layout from '../layouts/Layout.astro';
 import { amazonUrl, images } from '../utils/site';
 
@@ -155,7 +156,7 @@ const heroResponsiveCss = `
 
   <!-- Footer -->
   <footer class="bg-primary py-4 px-6 text-center text-sm text-white">
-    <p class="m-0">&copy; {new Date().getFullYear()} Sparkle. All rights reserved. Powered by <a href="https://spiritmedia.us" target="_blank" rel="noopener noreferrer" class="inline-block min-h-[44px] leading-[44px] underline hover:text-white/80">Spirit Media</a>.</p>
+    <p class="m-0">&copy; {new Date().getFullYear()} Sparkle. All rights reserved. Powered by <a href="https://spiritmedia.us" target="_blank" rel="noopener noreferrer" class="inline-block min-h-[44px] leading-[44px] underline hover:text-white/80">Spirit Media</a>. <HundredClubBadge /></p>
   </footer>
   <!-- Amazon Click Tracking (#50) -->
   <script is:inline>

@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://clowningfromtheheart.com/sitemap-index.xml

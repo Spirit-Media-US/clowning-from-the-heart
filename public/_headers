@@ -8,8 +8,10 @@
   Link: <https://assets.spiritmediapublishing.com/fonts/bebas-neue/bebas-neue-400.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
   Link: <https://assets.spiritmediapublishing.com/fonts/abril-fatface/abril-fatface-400.woff2>; rel=preload; as=font; type="font/woff2"; crossorigin
 
-# Homepage — additional Early Hint for the book-mockup LCP image (R2-hosted, stable URL)
+# Homepage — additional Early Hints for the LCP-critical hero bg + book mockup (R2-hosted, stable URLs)
+# Lighthouse identifies the hero CSS-bg <section> as the mobile LCP, so its image is hinted highest.
 /
+  Link: <https://assets.spiritmediapublishing.com/clowning-from-the-heart/hero-bg-sm.webp>; rel=preload; as=image; fetchpriority=high
   Link: <https://assets.spiritmediapublishing.com/clowning-from-the-heart/book-mockup-sm.webp>; rel=preload; as=image; fetchpriority=high
 # Link: headers above CF Pages promotes to 103 Early Hints on cached edge hits
 # (20-30% LCP win, CF BFCM data). Only stable URLs — hashed CSS filenames change.

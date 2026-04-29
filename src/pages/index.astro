@@ -2,20 +2,23 @@
 import HundredClubBadge from '../components/HundredClubBadge.astro';
 import Layout from '../layouts/Layout.astro';
 import { amazonUrl, images } from '../utils/site';
-
-const heroResponsiveCss = `
-  background-image: url('${images.heroBackgroundSm}');
-  @media (min-width: 768px) { background-image: url('${images.heroBackgroundMd}'); }
-  @media (min-width: 1280px) { background-image: url('${images.heroBackgroundLg}'); }
-`;
 ---
 
 <Layout>
-  <!-- Hero -->
-  <style set:html={`.hero-bg { ${heroResponsiveCss} }`}></style>
-  <section
-    class="hero-bg relative bg-cover bg-center text-center py-[25px] md:py-[35px]"
-  >
+  <!-- Hero — responsive img-srcset so the LCP element gets fetchpriority directly -->
+  <section class="relative overflow-hidden text-center py-[25px] md:py-[35px]">
+    <img
+      src={images.heroBackgroundSm}
+      srcset={`${images.heroBackgroundSm} 800w, ${images.heroBackgroundMd} 1280w, ${images.heroBackgroundLg} 1920w`}
+      sizes="(max-width: 767px) 358px, 1200px"
+      alt=""
+      width="800"
+      height="600"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
     <div class="absolute inset-0 bg-white/50 pointer-events-none" role="presentation"></div>
     <div class="relative z-10 mx-auto max-w-[1140px] px-4">
       <div class="mt-4 grid grid-cols-1 items-center gap-4 md:mt-8 md:gap-8 lg:grid-cols-2">

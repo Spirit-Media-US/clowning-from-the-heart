@@ -41,10 +41,15 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
       fetchpriority="high"
     />
 
-    <!-- Preload hero responsive background (one per breakpoint — only active one fetches) -->
-    <link rel="preload" as="image" href={images.heroBackgroundSm} media="(max-width: 767px)" fetchpriority="high" />
-    <link rel="preload" as="image" href={images.heroBackgroundMd} media="(min-width: 768px) and (max-width: 1279px)" fetchpriority="high" />
-    <link rel="preload" as="image" href={images.heroBackgroundLg} media="(min-width: 1280px)" fetchpriority="high" />
+    <!-- Preload hero LCP <img> (matches <picture> sources exactly — browser picks one) -->
+    <link
+      rel="preload"
+      as="image"
+      href={images.heroBackgroundSm}
+      imagesrcset={`${images.heroBackgroundSm} 800w, ${images.heroBackgroundMd} 1280w, ${images.heroBackgroundLg} 1920w`}
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
 
     <!-- Per-page head-early slot (reserved for future per-page LCP preloads) -->
     <slot name="head-early" />

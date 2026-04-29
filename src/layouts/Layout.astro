@@ -46,8 +46,8 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
       rel="preload"
       as="image"
       href={images.heroBackgroundSm}
-      imagesrcset={`${images.heroBackgroundSm} 800w, ${images.heroBackgroundMd} 1280w, ${images.heroBackgroundLg} 1920w`}
-      imagesizes="100vw"
+      imagesrcset={`${images.heroBackgroundSm} 640w, ${images.heroBackgroundMd} 1024w, ${images.heroBackgroundLg} 1600w`}
+      imagesizes="(max-width: 767px) 358px, 1200px"
       fetchpriority="high"
     />
 

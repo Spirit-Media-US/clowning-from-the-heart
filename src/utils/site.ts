@@ -28,5 +28,5 @@ export const images = {
   // Below-fold — Sanity CDN is fine
   reviewBackground: 'https://cdn.sanity.io/images/zvhqn0sn/production/bb0672461fb970d6b3a5a93f6e5d67cb94aeb9f4-1920x1080.webp?w=1200&fm=webp&q=70',
   headshot: `${headshotBase}?w=640&fm=webp&q=80`,
-  amazonButton: 'https://cdn.sanity.io/images/zvhqn0sn/production/3345b64a930065cb945a5f24b67a33446f4c26d5-300x111.png?w=350&q=85',
+  amazonButton: 'https://cdn.sanity.io/images/zvhqn0sn/production/3345b64a930065cb945a5f24b67a33446f4c26d5-300x111.png?w=350&fm=webp&q=80',
 };

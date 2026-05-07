@@ -2,25 +2,28 @@
 import HundredClubBadge from '../components/HundredClubBadge.astro';
 import Layout from '../layouts/Layout.astro';
 import { amazonUrl, images } from '../utils/site';
-
-const heroResponsiveCss = `
-  background-image: url('${images.heroBackgroundSm}');
-  @media (min-width: 768px) { background-image: url('${images.heroBackgroundMd}'); }
-  @media (min-width: 1280px) { background-image: url('${images.heroBackgroundLg}'); }
-`;
 ---
 
 <Layout>
-  <!-- Hero -->
-  <style set:html={`.hero-bg { ${heroResponsiveCss} }`}></style>
-  <section
-    class="hero-bg relative bg-cover bg-center text-center py-[25px] md:py-[35px]"
-  >
+  <!-- Hero — responsive img-srcset so the LCP element gets fetchpriority directly -->
+  <section class="relative overflow-hidden text-center py-[25px] md:py-[35px]">
+    <img
+      src={images.heroBackgroundSm}
+      srcset={`${images.heroBackgroundSm} 640w, ${images.heroBackgroundMd} 1024w, ${images.heroBackgroundLg} 1600w`}
+      sizes="(max-width: 767px) 358px, 1200px"
+      alt=""
+      width="640"
+      height="480"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
     <div class="absolute inset-0 bg-white/50 pointer-events-none" role="presentation"></div>
     <div class="relative z-10 mx-auto max-w-[1140px] px-4">
       <div class="mt-4 grid grid-cols-1 items-center gap-4 md:mt-8 md:gap-8 lg:grid-cols-2">
         <div class="order-2 self-center text-center lg:order-1 lg:text-left">
-          <h1 class="mb-2 font-bebas text-[24px] font-semibold leading-none tracking-[1.4px] text-primary md:mb-4 md:text-[50px] lg:text-[65px]">
+          <h1 class="mb-2 font-bebas text-[40px] font-semibold leading-none tracking-[1.4px] text-primary md:mb-4 md:text-[72px] lg:text-[96px]">
             NOW AVAILABLE!
           </h1>
           <a href={amazonUrl} target="_blank" rel="noopener noreferrer" aria-label="Order now at Amazon" data-amazon="hero" class="mb-4 inline-block min-h-[44px]">

@@ -41,10 +41,15 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
       fetchpriority="high"
     />
 
-    <!-- Preload hero responsive background (one per breakpoint — only active one fetches) -->
-    <link rel="preload" as="image" href={images.heroBackgroundSm} media="(max-width: 767px)" />
-    <link rel="preload" as="image" href={images.heroBackgroundMd} media="(min-width: 768px) and (max-width: 1279px)" />
-    <link rel="preload" as="image" href={images.heroBackgroundLg} media="(min-width: 1280px)" />
+    <!-- Preload hero LCP <img> (matches <picture> sources exactly — browser picks one) -->
+    <link
+      rel="preload"
+      as="image"
+      href={images.heroBackgroundSm}
+      imagesrcset={`${images.heroBackgroundSm} 640w, ${images.heroBackgroundMd} 1024w, ${images.heroBackgroundLg} 1600w`}
+      imagesizes="(max-width: 767px) 358px, 1200px"
+      fetchpriority="high"
+    />
 
     <!-- Per-page head-early slot (reserved for future per-page LCP preloads) -->
     <slot name="head-early" />
@@ -85,7 +90,9 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
         .mx-auto{margin-inline:auto}
         .mt-4{margin-top:1rem}.mb-2{margin-bottom:.5rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}
         .px-4{padding-inline:1rem}.py-2{padding-block:.5rem}
-        .w-full{width:100%}.h-auto{height:auto}
+        .w-full{width:100%}.h-full{height:100%}.h-auto{height:auto}
+        .object-cover{object-fit:cover}
+        .overflow-hidden{overflow:hidden}
         .max-w-\[1140px\]{max-width:1140px}
         .max-w-\[440px\]{max-width:440px}
         .max-w-\[55\%\]{max-width:55%}
@@ -96,7 +103,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
         .leading-none{line-height:1}
         .leading-\[1\.4\]{line-height:1.4}
         .tracking-\[1\.4px\]{letter-spacing:1.4px}
-        .text-\[24px\]{font-size:24px}.text-\[30px\]{font-size:30px}
+        .text-\[40px\]{font-size:40px}.text-\[30px\]{font-size:30px}
         .font-semibold{font-weight:600}.font-black{font-weight:900}
         .font-bebas{font-family:'Bebas Neue',sans-serif}
         .font-abril{font-family:'Abril Fatface',serif}
@@ -126,7 +133,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
           .md\:gap-8{gap:2rem}
           .md\:py-\[35px\]{padding-block:35px}
           .md\:max-w-\[350px\]{max-width:350px}
-          .md\:text-\[50px\]{font-size:50px}
+          .md\:text-\[72px\]{font-size:72px}
           .md\:text-\[clamp\(30px\2c 4vw\2c 50px\)\]{font-size:clamp(30px,4vw,50px)}
           .md\:leading-\[1\.2\]{line-height:1.2}
         }
@@ -135,7 +142,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
           .lg\:order-1{order:1}
           .lg\:order-2{order:2}
           .lg\:text-left{text-align:left}
-          .lg\:text-\[65px\]{font-size:65px}
+          .lg\:text-\[96px\]{font-size:96px}
         }
         @media(prefers-reduced-motion:reduce){
           .motion-reduce\:hover\:scale-100:hover{transform:scale(1)}

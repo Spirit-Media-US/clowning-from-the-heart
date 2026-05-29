@@ -2,14 +2,18 @@
 import HundredClubBadge from '../components/HundredClubBadge.astro';
 import Layout from '../layouts/Layout.astro';
 import { amazonUrl, images } from '../utils/site';
+
+const heroSm = 'https://assets.spiritmediapublishing.com/clowning-from-the-heart/hero-bg-sm.webp';
+const heroMd = 'https://assets.spiritmediapublishing.com/clowning-from-the-heart/hero-bg-md.webp';
+const heroLg = 'https://assets.spiritmediapublishing.com/clowning-from-the-heart/hero-bg-lg.webp';
 ---
 
 <Layout>
   <!-- Hero — responsive img-srcset so the LCP element gets fetchpriority directly -->
   <section class="relative overflow-hidden text-center py-[25px] md:py-[35px]">
     <img
-      src={images.heroBackgroundSm}
-      srcset={`${images.heroBackgroundSm} 640w, ${images.heroBackgroundMd} 1024w, ${images.heroBackgroundLg} 1600w`}
+      src={heroSm}
+      srcset={`${heroSm} 640w, ${heroMd} 1024w, ${heroLg} 1600w`}
       sizes="(max-width: 767px) 358px, 1200px"
       alt=""
       width="640"
